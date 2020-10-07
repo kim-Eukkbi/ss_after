@@ -8,29 +8,36 @@ public class UI : MonoBehaviour
 
     [SerializeField]
     private GameObject menu_base = null;
-    
+    private bool is_Ectv_pressed = false;
 
     public GameObject menu_set = null;
     public GameObject Ectv_button = null;
     public GameObject countiune_but = null;
     public GameObject quit_but = null;
     public GameObject note_set = null;
+    public GameObject shop_base = null;
 
     public void OpenMenu()
     {
-        if(menu_set.activeSelf)
+        if (!is_Ectv_pressed)
         {
-            Ectv_button.SetActive(true);
-            menu_base.transform.DOMoveX(4f, 0.5f);
-            menu_set.SetActive(false);
-            Invoke("Off_menu", 0.5f);
-        }
-        else
-        {
-            menu_base.SetActive(true);
-            menu_set.SetActive(true);
-            menu_base.transform.DOMoveX(2.5f, 0.5f);
-            Ectv_button.SetActive(false);
+            is_Ectv_pressed = true;
+            Invoke("Ectv_Active", 0.51f);
+
+            if (menu_set.activeSelf)
+            {
+                Ectv_button.SetActive(true);
+                menu_base.transform.DOMoveX(4f, 0.5f);
+                menu_set.SetActive(false);
+                Invoke("Off_menu", 0.5f);
+            }
+            else
+            {
+                menu_base.SetActive(true);
+                menu_set.SetActive(true);
+                menu_base.transform.DOMoveX(2.5f, 0.5f);
+                Ectv_button.SetActive(false);
+            }
         }
     }
 
@@ -59,6 +66,12 @@ public class UI : MonoBehaviour
     private void Off_note()
     {
         note_set.SetActive(false);
+        shop_base.SetActive(false);
+    }
+
+    private void Ectv_Active()
+    {
+        is_Ectv_pressed = false;
     }
 
     private void Ectv_off()
@@ -77,5 +90,20 @@ public class UI : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    // 혹시 충돌날까봐 윗줄에 안쓰고 아랫줄에 추가함요 나중에 위로 올려주시길 바람
+    public void OpenShop()
+    {
+        if (shop_base.activeSelf)
+        {
+            shop_base.SetActive(false);
+            OpenNote();
+        }
+        else 
+        {
+            shop_base.SetActive(true);
+            OpenNote();
+        }
     }
 }
