@@ -6,14 +6,14 @@ public class Gostcome : MonoBehaviour
 {
     
     public GameObject gost = null;
-    private int gostcomper = 0;
-    private bool gostchack = false;
-    private bool gostonchack = false;
+    private int gostComPer = 0;
+    private bool gostcheck = false;
+    private bool gostoncheck = false;
 
     // Start is called before the first frame update
     private void Start()
     {
-        if(gostonchack == false)
+        if(gostoncheck == false)
         {
             if (!gost.activeSelf)
             {
@@ -29,28 +29,28 @@ public class Gostcome : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (gostcomper <= 40 && gostcomper != 0)
+        if (gostComPer <= 40 && gostComPer != 0)
         {
-            if (gostchack == false)
+            if (gostcheck == false)
             {
                 gost.SetActive(true);
                 Debug.Log("ㅎㅇ");
-                gostchack = true;
+                gostcheck = true;
             }
         }
     }
 
     private void Randommake()
     {
-        gostcomper = Random.Range(0, 100);
-        Debug.Log(gostcomper);
+        gostComPer = Random.Range(0, 100);
+        Debug.Log(gostComPer);
     }
     private void Gostrancom()
     {
-        if (!(gostcomper <= 40 && gostcomper !=0))
+        if (!(gostComPer <= 40 && gostComPer !=0))
         {
             Randommake();
-            gostchack = false;
+            gostcheck = false;
         }
     }
  

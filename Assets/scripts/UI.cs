@@ -16,6 +16,7 @@ public class UI : MonoBehaviour
     public GameObject quit_but = null;
     public GameObject note_set = null;
     public GameObject shop_base = null;
+    public GameObject gostInfo_base = null;
 
     public void OpenMenu()
     {
@@ -67,6 +68,7 @@ public class UI : MonoBehaviour
     {
         note_set.SetActive(false);
         shop_base.SetActive(false);
+        gostInfo_base.SetActive(false);
     }
 
     private void Ectv_Active()
@@ -93,6 +95,20 @@ public class UI : MonoBehaviour
     }
 
     // 혹시 충돌날까봐 윗줄에 안쓰고 아랫줄에 추가함요 나중에 위로 올려주시길 바람
+    public void OpenGostInfo()
+    {
+        if (gostInfo_base.activeSelf)
+        {
+            gostInfo_base.SetActive(false);
+            OpenNote();
+        }
+        else
+        {
+            gostInfo_base.SetActive(true);
+            OpenNote();
+        }
+    }
+
     public void OpenShop()
     {
         if (shop_base.activeSelf)
