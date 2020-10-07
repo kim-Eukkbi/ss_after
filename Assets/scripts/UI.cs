@@ -16,48 +16,39 @@ public class UI : MonoBehaviour
     public GameObject quit_but = null;
     public GameObject note_set = null;
 
-    private void Update()
-    {
-       /* if(menu_base.transform.position.y > 70)
-        {
-            menu_base.SetActive(false);
-        }
-        else
-        {
-            menu_base.SetActive(true);
-        }*/
-    }
     public void OpenMenu()
     {
         if(menu_set.activeSelf)
         {
-            menu_set.SetActive(false);
             Ectv_button.SetActive(true);
-            menu_base.transform.DOMove(new Vector2(0, 7.2f), 0.5f);
+            menu_base.transform.DOMoveX(4f, 0.5f);
+            menu_set.SetActive(false);
             Invoke("Off_menu", 0.5f);
         }
         else
         {
             menu_base.SetActive(true);
             menu_set.SetActive(true);
+            menu_base.transform.DOMoveX(2.5f, 0.5f);
             Ectv_button.SetActive(false);
-            menu_base.transform.DOMove(new Vector2(0, 0.5f), 0.5f);
         }
     }
 
     public void OpenNote()
     {
         if(note_set.activeSelf)
-        {
+        { 
             note_set.transform.DOMoveX(5f,1f);
-            note_set.transform.DORotate(new Vector3(0, 0, -20), 1);
+            note_set.transform.DORotate(new Vector3(0, 0, -2), 1);
             Invoke("Off_note", 1);
+            Invoke("Ectv_off", 0.001f);
         }
         else
         {
             note_set.SetActive(true);
-            note_set.transform.DOMoveX(2, 1);
-            note_set.transform.DORotate(new Vector3(0,0,27),1);
+            note_set.transform.DOMoveX(0.5f, 1f);
+            note_set.transform.DORotate(new Vector3(0,0,10),1);
+            Invoke("Ectv_off", 0.001f);
         }
     }
     private void Off_menu()
@@ -68,6 +59,18 @@ public class UI : MonoBehaviour
     private void Off_note()
     {
         note_set.SetActive(false);
+    }
+
+    private void Ectv_off()
+    {
+        if(!Ectv_button.activeSelf)
+        {
+            Ectv_button.SetActive(true);
+        }
+        else
+        {
+            Ectv_button.SetActive(false);
+        }
     }
 
 
