@@ -17,6 +17,8 @@ public class UI : MonoBehaviour
     public GameObject note_set = null;
     public GameObject shop_base = null;
     public GameObject gostInfo_base = null;
+    public GameObject gost_han_base = null;
+
 
     public void OpenMenu()
     {
@@ -58,6 +60,11 @@ public class UI : MonoBehaviour
             note_set.transform.DORotate(new Vector3(0,0,10),1);
             Invoke("Ectv_off", 0.001f);
         }
+    }
+
+    public void Gostchack()
+    {
+        gost_han_base.SetActive(true);
     }
     private void Off_menu()
     {
