@@ -10,7 +10,7 @@ public class Gostcome : MonoBehaviour
     public GameObject gost = null;
     private int gostComPer = 0;
     private bool gostcheck = false;
-    private bool gostoncheck = false;
+    private bool gost_come_check = false;
     private bool gostON = false;
     [SerializeField]
     private float chackdly = 0f;
@@ -22,11 +22,11 @@ public class Gostcome : MonoBehaviour
 
     private void Update()
     {
-        if (gostoncheck == false)
+        if (gost_come_check == false)
         {
             if (!gost.activeSelf)
             {
-                gostoncheck = true;
+                gost_come_check = true;
                 InvokeRepeating("Gostrancom", 10, chackdly); 
             }
         }
@@ -57,6 +57,7 @@ public class Gostcome : MonoBehaviour
     {
         gost.SetActive(false);
         Debug.Log("나감");
+        gost_come_check = false;
     }
 
     private void Randommake()
