@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using DG.Tweening.Core.Easing;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Gostcome : MonoBehaviour
 {
@@ -9,28 +11,26 @@ public class Gostcome : MonoBehaviour
     private int gostComPer = 0;
     private bool gostcheck = false;
     private bool gostoncheck = false;
+    private bool gostON = false;
     [SerializeField]
     private float chackdly = 0f;
 
-    // Start is called before the first frame update
+   
     private void Start()
     {
-        if(gostoncheck == false)
+    }
+
+    private void Update()
+    {
+        if (gostoncheck == false)
         {
             if (!gost.activeSelf)
             {
-                InvokeRepeating("Gostrancom", 1, chackdly);
-            }
-            else
-            {
-                CancelInvoke("Gostrancom");
+                gostoncheck = true;
+                InvokeRepeating("Gostrancom", 10, chackdly); 
             }
         }
-    }
 
-    // Update is called once per frame
-    private void Update()
-    {
         if (gostComPer <= 40 && gostComPer != 0)
         {
             if (gostcheck == false)
@@ -38,15 +38,34 @@ public class Gostcome : MonoBehaviour
                 gost.SetActive(true);
                 Debug.Log("ㅎㅇ");
                 gostcheck = true;
+                gostON = true;
+            }
+        }
+
+        if(gost.activeSelf)
+        { 
+            if(gostON == true)
+            {
+                Invoke("Gostout", 60);
+                CancelInvoke("Gostrancom");
+                gostON = false;
             }
         }
     }
 
+    private void Gostout()
+    {
+        gost.SetActive(false);
+        Debug.Log("나감");
+    }
+
     private void Randommake()
     {
+        gostComPer = 0;
         gostComPer = Random.Range(0, 100);
         Debug.Log(gostComPer);
     }
+
     private void Gostrancom()
     {
         if (!(gostComPer <= 40 && gostComPer !=0))
