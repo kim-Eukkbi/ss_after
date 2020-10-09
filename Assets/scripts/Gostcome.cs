@@ -6,73 +6,41 @@ using UnityEngine.Rendering;
 
 public class Gostcome : MonoBehaviour
 {
-    
     public GameObject gost = null;
-    private int gostComPer = 0;
-    private bool gostcheck = false;
-    private bool gost_come_check = false;
-    private bool gostON = false;
+    private int gost_Come_Per = 0;
+    private bool gost_Come_Check = false;
+
     [SerializeField]
-    private float chackdly = 0f;
+    private float timer = 10f;
 
-   
-    private void Start()
+    private void FixedUpdate()
     {
-    }
+        if (gost.activeSelf)
+            return;
 
-    private void Update()
-    {
-        if (gost_come_check == false)
+        if (gost_Come_Check == false)
         {
             if (!gost.activeSelf)
             {
-                gost_come_check = true;
-                InvokeRepeating("Gostrancom", 10, chackdly); 
+                GostRandomCome();
             }
         }
+    }
 
-        if (gostComPer <= 40 && gostComPer != 0)
+    private void RandomMake()
+    {
+        gost_Come_Per = 0;
+        gost_Come_Per = Random.Range(0, 100);
+        Debug.Log(gost_Come_Per);
+    }
+
+    private void GostRandomCome()
+    {
+        RandomMake();
+
+        if (gost_Come_Per <= 40 && gost_Come_Per != 0)
         {
-            if (gostcheck == false)
-            {
-                gost.SetActive(true);
-                Debug.Log("ㅎㅇ");
-                gostcheck = true;
-                gostON = true;
-            }
-        }
-
-        if(gost.activeSelf)
-        { 
-            if(gostON == true)
-            {
-                Invoke("Gostout", 60);
-                CancelInvoke("Gostrancom");
-                gostON = false;
-            }
-        }
-    }
-
-    private void Gostout()
-    {
-        gost.SetActive(false);
-        Debug.Log("나감");
-        gost_come_check = false;
-    }
-
-    private void Randommake()
-    {
-        gostComPer = 0;
-        gostComPer = Random.Range(0, 100);
-        Debug.Log(gostComPer);
-    }
-
-    private void Gostrancom()
-    {
-        if (!(gostComPer <= 40 && gostComPer !=0))
-        {
-            Randommake();
-            gostcheck = false;
+            gost.SetActive(true);
         }
     }
  
