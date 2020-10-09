@@ -9,6 +9,8 @@ public class Gostcome : MonoBehaviour
     private int gostComPer = 0;
     private bool gostcheck = false;
     private bool gostoncheck = false;
+    [SerializeField]
+    private float chackdly = 0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -17,7 +19,7 @@ public class Gostcome : MonoBehaviour
         {
             if (!gost.activeSelf)
             {
-                InvokeRepeating("Gostrancom", 1, 15);
+                InvokeRepeating("Gostrancom", 1, chackdly);
             }
             else
             {
