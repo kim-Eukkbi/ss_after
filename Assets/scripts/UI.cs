@@ -32,7 +32,7 @@ public class UI : MonoBehaviour
                 Ectv_button.SetActive(true);
                 menu_base.transform.DOMoveX(4f, 0.5f);
                 menu_set.SetActive(false);
-                //Invoke("Off_menu", 0.51f);
+               // Invoke("Off_menu", .61f);
             }
             else
             {
@@ -66,7 +66,7 @@ public class UI : MonoBehaviour
     }
     private void Off_menu()
     {
-        //menu_base.SetActive(false);
+       // menu_base.SetActive(false);
     }
 
     private IEnumerator Off_note()
