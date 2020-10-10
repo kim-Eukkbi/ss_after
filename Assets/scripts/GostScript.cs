@@ -14,6 +14,5 @@ public class GostScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         Debug.Log("나감");
-        //gost_Come_Check = false;
     }
 }

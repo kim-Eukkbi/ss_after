@@ -32,7 +32,7 @@ public class UI : MonoBehaviour
                 Ectv_button.SetActive(true);
                 menu_base.transform.DOMoveX(4f, 0.5f);
                 menu_set.SetActive(false);
-                Invoke("Off_menu", 0.5f);
+                //Invoke("Off_menu", 0.51f);
             }
             else
             {
@@ -47,10 +47,8 @@ public class UI : MonoBehaviour
     public void OpenNote()
     {
         if(note_set.activeSelf)
-        { 
-            note_set.transform.DOMoveX(5f,1f);
-            note_set.transform.DORotate(new Vector3(0, 0, -2), 1);
-            Invoke("Off_note", 1);
+        {
+            StartCoroutine(Off_note());
             Invoke("Ectv_off", 0.001f);
         }
         else
@@ -68,11 +66,16 @@ public class UI : MonoBehaviour
     }
     private void Off_menu()
     {
-        menu_base.SetActive(false);
+        //menu_base.SetActive(false);
     }
 
-    private void Off_note()
+    private IEnumerator Off_note()
     {
+        note_set.transform.DOMoveX(5f, 1f);
+        note_set.transform.DORotate(new Vector3(0, 0, -2), 1);
+
+        yield return new WaitForSeconds(1f);
+
         note_set.SetActive(false);
         shop_base.SetActive(false);
         gostInfo_base.SetActive(false);

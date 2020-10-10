@@ -8,22 +8,24 @@ public class Gostcome : MonoBehaviour
 {
     public GameObject gost = null;
     private int gost_Come_Per = 0;
-    private bool gost_Come_Check = false;
 
     [SerializeField]
-    private float timer = 10f;
+    private float maxTimer = 10f;
+    private float timer = 0f;
 
     private void FixedUpdate()
     {
         if (gost.activeSelf)
             return;
 
-        if (gost_Come_Check == false)
+        if (timer >= maxTimer)
         {
-            if (!gost.activeSelf)
-            {
-                GostRandomCome();
-            }
+            timer = 0f;
+            GostRandomCome();
+        }
+        else
+        {
+            timer++;
         }
     }
 
@@ -43,5 +45,4 @@ public class Gostcome : MonoBehaviour
             gost.SetActive(true);
         }
     }
- 
 }
