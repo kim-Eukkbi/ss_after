@@ -45,7 +45,7 @@ public class UI : MonoBehaviour
             {
                 menu_base.SetActive(true);
                 menu_set.SetActive(true);
-                menu_base.transform.DOMoveX(2.5f, 0.5f).OnComplete(Ectv_Active_true);
+                menu_base.transform.DOMoveX(2f, 0.5f).OnComplete(Ectv_Active_true);
                 Ectv_button.SetActive(false);
             }
         }
