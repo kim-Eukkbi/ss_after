@@ -56,15 +56,15 @@ public class UI : MonoBehaviour
         if (note_set.activeInHierarchy)
         {
             note_set.transform.DOMoveX(5f, 1f);
-            note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(All_NoteUse_Menu_Off);
-            Invoke("Ectv_off", 0.001f);
+            note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(All_NoteUse_Menu_Off_With_Ectv_off);
+            //Invoke("Ectv_off", 0.001f);
         }
         else
         {
             note_set.SetActive(true);
             note_set.transform.DOMoveX(0.5f, 1f);
-            note_set.transform.DORotate(new Vector3(0, 0, 10), 1);
-            Invoke("Ectv_off", 0.001f);
+            note_set.transform.DORotate(new Vector3(0, 0, 10), 1).OnComplete(Ectv_off);
+            //Invoke("Ectv_off", 0.001f);
         }
     }
 
@@ -74,12 +74,13 @@ public class UI : MonoBehaviour
     }
  
 
-    private void All_NoteUse_Menu_Off()
+    private void All_NoteUse_Menu_Off_With_Ectv_off()
     {
         note_set.SetActive(false);
         shop_base.SetActive(false);
         gostInfo_base.SetActive(false);
         setting_base.SetActive(false);
+        Ectv_off();
     }
 
 
