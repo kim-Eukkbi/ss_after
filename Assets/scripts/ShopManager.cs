@@ -7,55 +7,107 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
     public ItemData itemData;
+    public PopupInfo shopPopup;
+
+    private bool is_popuped = false;
+    private ItemInfo currentItem;
 
     // 아이템을 클릭할시
-    public void OnClickItem(ItemInfo currentItem)
+    public void OnClickItem(ItemInfo itemInfo)
     {
-        switch (currentItem.itemNum)
+        currentItem = itemInfo;
+
+        if (!is_popuped)
         {
-            case 1:
+            shopPopup.itemImage.sprite = itemInfo.itemImage;
+            shopPopup.itemName.text = itemInfo.itemName;
+            shopPopup.itemDes.text = itemInfo.itemDes;
+            shopPopup.itemPrice.text = string.Format("가격 : {0}", itemInfo.itemPrice);
+            shopPopup.buyButton.SetActive(false);
+            shopPopup.useButton.SetActive(false);
 
-                if (itemData.item1_isActive)
-                {
-                    Debug.Log("이미 구매한 아이템임다!!!");
-                }
-                else 
-                {
-                    Debug.Log("아이템 정보 : " + currentItem.itemDes);
-                    itemData.item1_isActive = true;
-                    Debug.Log("아이템 구매완료");
-                }
-                break;
+            switch (itemInfo.itemNum)   // 현재 아이템의 번호
+            {
+                case 1:
 
-            case 2:
+                    if (itemData.item1_isActive)
+                    {
+                        shopPopup.useButton.SetActive(true);
+                    }
+                    else
+                    {
+                        shopPopup.buyButton.SetActive(true);
+                    }
+                    break;
 
-                if (itemData.item2_isActive)
-                {
-                    Debug.Log("이미 구매한 아이템임다!!!");
-                }
-                else
-                {
-                    Debug.Log("아이템 정보 : " + currentItem.itemDes);
-                    itemData.item2_isActive = true;
-                    Debug.Log("아이템 구매완료");
-                }
-                break;
+                case 2:
 
-            case 3:
+                    if (itemData.item2_isActive)
+                    {
+                        shopPopup.useButton.SetActive(true);
+                    }
+                    else
+                    {
+                        shopPopup.buyButton.SetActive(true);
+                    }
+                    break;
 
-                if (itemData.item3_isActive)
-                {
-                    Debug.Log("이미 구매한 아이템임다!!!");
-                }
-                else
-                {
-                    Debug.Log("아이템 정보 : " + currentItem.itemDes);
-                    itemData.item3_isActive = true;
-                    Debug.Log("아이템 구매완료");
-                }
-                break;
+                case 3:
+
+                    if (itemData.item3_isActive)
+                    {
+                        shopPopup.useButton.SetActive(true);
+                    }
+                    else
+                    {
+                        shopPopup.buyButton.SetActive(true);
+                    }
+                    break;
+            }
+
+            ShowAndRemovePopup();
         }
     }
+
+    public void BuyItem()
+    {
+        if (GameManager.instance.gameInfo.coin >= currentItem.itemPrice)
+        {
+            GameManager.instance.gameInfo.coin -= currentItem.itemPrice;
+
+            if (currentItem.itemNum == 1)
+                itemData.item1_isActive = true;
+            else if (currentItem.itemNum == 2)
+                itemData.item2_isActive = true;
+            else if (currentItem.itemNum == 3)
+                itemData.item3_isActive = true;
+
+            shopPopup.buyButton.SetActive(false);
+            shopPopup.useButton.SetActive(true);
+
+            Debug.Log("구매완료");
+            Debug.Log("현재 돈 : " + GameManager.instance.gameInfo.coin);
+        }
+        else
+        {
+            Debug.Log("돈이 부족합니다!!");
+        }
+    }
+
+    public void ShowAndRemovePopup()
+    {
+        if (!is_popuped)
+        {
+            shopPopup.gameObject.SetActive(true);
+            is_popuped = true;
+        }
+        else
+        {
+            shopPopup.gameObject.SetActive(false);
+            is_popuped = false;
+        }
+    }
+
 
     // Json IO
     [ContextMenu("To Json Data")]
