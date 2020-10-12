@@ -6,6 +6,7 @@ public class ItemInfo : MonoBehaviour
 {
     public int itemNum;
     public Sprite itemImage;
+    public string itemName;
     public string itemDes;
     public int itemPrice;
 }
