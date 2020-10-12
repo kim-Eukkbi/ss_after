@@ -22,6 +22,7 @@ public class ShopManager : MonoBehaviour
             shopPopup.itemImage.sprite = itemInfo.itemImage;
             shopPopup.itemName.text = itemInfo.itemName;
             shopPopup.itemDes.text = itemInfo.itemDes;
+            shopPopup.itemPrice.text = string.Format("가격 : {0}", itemInfo.itemPrice);
             shopPopup.buyButton.SetActive(false);
             shopPopup.useButton.SetActive(false);
 

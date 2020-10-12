@@ -307,8 +307,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 330}
-  m_SizeDelta: {x: 600, y: 200}
+  m_AnchoredPosition: {x: 225, y: 480}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99428671
 MonoBehaviour:
@@ -331,7 +331,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d53e1003541d9094685ab0a3eaa441e1, type: 3}
-    m_FontSize: 110
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC544\uC774\uD15C1"
+  m_Text: "\uC544\uC774\uD15C\uC774 \uB108\uBB34 \uC314\uC11C 2\uC904\uC774\uB2E4"
 --- !u!222 &99428672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -614,8 +614,9 @@ MonoBehaviour:
   itemNum: 1
   itemImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemName: "\uB208\uAE54\uC774\uB098 \uAC1C\uAD6C\uB9AC \uD45C\uBCF8"
-  itemDes: "\uC9F1\uC9F1\uC318 \uC544\uC774\uD15C\uC784 \uC774\uAC74 18\uC138\uAE30
-    \uC720\uB7FD\uC5D0\uC11C\uBD80\uD130 \uC804\uD574\uC838\uC654\uC73C\uBA70... "
+  itemDes: "\uD0C0\uC785 : \uC9D5\uADF8\uB7EC\uC6C0                     \uB208\uC774
+    \uC5C6\uB294 \uAC1C\uAD6C\uB9AC\uC758 \uD45C\uBCF8\uC774\uB2E4. \uBCF4\uC874\uC0C1\uD0DC\uAC00
+    \uC88B\uC544 \uB9C8\uCE58 \uC0B4\uC544\uC788\uB294\uAC83 \uAC19\uB2E4."
   itemPrice: 10
 --- !u!114 &263188268
 MonoBehaviour:
@@ -891,8 +892,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 2
   itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  itemName: "\uC544\uC774\uD15C2"
-  itemDes: "\uC544\uC774\uD15C2\uC784"
+  itemName: "\uC640\uC0CC\uC988"
+  itemDes: "\uD0C0\uC785 : \uC9D5\uADF8\uB7EC\uC6C0                    \uC5B4\uB514\uC120\uAC00
+    \uBCF8\uC801\uC788\uB294 \uBF08\uBC16\uC5D0 \uC5C6\uB294 \uC778\uCCB4\uBAA8\uD615\uC774\uB2E4.
+    \uB208 \uD55C\uCABD\uC774 \uC774\uC0C1\uD558\uAC8C \uBE5B\uB09C\uB2E4."
   itemPrice: 20
 --- !u!114 &358646779
 MonoBehaviour:
@@ -1057,7 +1060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: -380}
+  m_AnchoredPosition: {x: 300, y: -560}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452326975
@@ -1270,8 +1273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 199}
-  m_SizeDelta: {x: 1300, y: 1200}
+  m_AnchoredPosition: {x: -100, y: 200}
+  m_SizeDelta: {x: 1300, y: 1600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468295762
 MonoBehaviour:
@@ -1578,7 +1581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: 350}
+  m_AnchoredPosition: {x: -350, y: 500}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566845573
@@ -2357,8 +2360,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 3
   itemImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  itemName: "\uC544\uC774\uD15C3"
-  itemDes: "\uCD5C\uAC15\uC9C0\uC874\uD15C\uC784"
+  itemName: "\uC5C4\uCCAD \uD574\uC9C4 \uC778\uD615"
+  itemDes: "\uD0C0\uC785 : \uB0A1\uC740 \uAC83                    \uAD49\uC7A5\uD788
+    \uC624\uB798\uB41C\uAC83 \uAC19\uC740 \uD1A0\uB07C\uC778\uD615\uC774\uB2E4. \uADC0\uC5FD\uAC8C
+    \uC0DD\uACBC\uC9C0\uB9CC \uADC0 \uD55C\uCABD\uC774 \uB72F\uC5B4\uC838\uC788\uB2E4."
   itemPrice: 30
 --- !u!114 &741616971
 MonoBehaviour:
@@ -2486,7 +2491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2079, y: -226}
+  m_AnchoredPosition: {x: 2079, y: -225.99976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &854822745
@@ -2772,8 +2777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -50}
-  m_SizeDelta: {x: 1000, y: 400}
+  m_AnchoredPosition: {x: 50, y: -70}
+  m_SizeDelta: {x: 1000, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989497100
 MonoBehaviour:
@@ -2807,7 +2812,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC9F1\uC9F1\uC318 \uC544\uC774\uD15C\uC774\uB2E4."
+  m_Text: "\uD0C0\uC785 : \uAC81\uB098 \uC318\uAC70\n\uC9F1\uC9F1\uC318 \uC544\uC774\uD15C\uC774\uB2E4.
+    \uB108\uBB34 \uC314\uC11C \uC124\uBA85\uC774 2\uC904\uC774\uB098 \uB41C\uB2E4.
+    \uCEE4\uC2E0\uC740 \uB2F9\uC5F0\uD558\uACE0 \uBE14\uB8E8\uC2A4\uD06C\uB9B0\uB9C8\uC800\uB3C4
+    \uB04C\uC5B4\uB2F9\uAE34\uB2E4. \uC4F0\uB2E4\uBCF4\uB2C8\uAE50 5\uC904\uC774\uB2E4
+    \uC774\uB9CC \uC990"
 --- !u!222 &989497101
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2930,7 +2939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -380}
+  m_AnchoredPosition: {x: -300, y: -560}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025886476
