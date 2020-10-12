@@ -10,6 +10,11 @@ public class Title : MonoBehaviour
     public Image image;
     public float opacity = 0;
 
+    private void Start()
+    {
+        Application.targetFrameRate = 300;
+    }
+
     private void Awake()
     {
         Screen.orientation = ScreenOrientation.Portrait;
