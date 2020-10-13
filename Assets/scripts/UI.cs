@@ -51,20 +51,42 @@ public class UI : MonoBehaviour
         }
     }
 
+    public void OffMenuWithNote()
+    {
+            is_Ectv_pressed = false;
+
+            menu_set.SetActive(false);
+            menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
+    }
+
     public void OpenNote()
     {
         if (note_set.activeInHierarchy)
         {
             note_set.transform.DOMoveX(5f, 1f);
             note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(All_NoteUse_Menu_Off_With_Ectv_off);
-            //Invoke("Ectv_off", 0.001f);
+            Ectv_off();
         }
         else
         {
             note_set.SetActive(true);
             note_set.transform.DOMoveX(0.5f, 1f);
             note_set.transform.DORotate(new Vector3(0, 0, 10), 1).OnComplete(Ectv_off);
-            //Invoke("Ectv_off", 0.001f);
+        }
+    }
+
+    public void OpenNoteWithMenu()
+    {
+        if (note_set.activeInHierarchy)
+        {
+            note_set.transform.DOMoveX(5f, 1f);
+            note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(All_NoteUse_Menu_Off_With_Ectv_off);
+        }
+        else
+        {
+            note_set.SetActive(true);
+            note_set.transform.DOMoveX(0.5f, 1f);
+            note_set.transform.DORotate(new Vector3(0, 0, 10), 1);
         }
     }
 
@@ -80,7 +102,6 @@ public class UI : MonoBehaviour
         shop_base.SetActive(false);
         gostInfo_base.SetActive(false);
         setting_base.SetActive(false);
-        Ectv_off();
     }
 
 
@@ -110,12 +131,12 @@ public class UI : MonoBehaviour
         if (gostInfo_base.activeInHierarchy)
         {
             gostInfo_base.SetActive(false);
-            OpenNote();
+            OpenNoteWithMenu();
         }
         else
         {
             gostInfo_base.SetActive(true);
-            OpenNote();
+            OpenNoteWithMenu();
         }
     }
 
@@ -124,12 +145,12 @@ public class UI : MonoBehaviour
         if (shop_base.activeInHierarchy)
         {
             shop_base.SetActive(false);
-            OpenNote();
+            OpenNoteWithMenu();
         }
         else
         {
             shop_base.SetActive(true);
-            OpenNote();
+            OpenNoteWithMenu();
         }
     }
 
@@ -138,12 +159,12 @@ public class UI : MonoBehaviour
         if(setting_base.activeInHierarchy)
         {
             setting_base.SetActive(false);
-            OpenNote();
+            OpenNoteWithMenu();
         }
         else
         {
             setting_base.SetActive(true);
-            OpenNote();
+            OpenNoteWithMenu();
         }
     }
 }

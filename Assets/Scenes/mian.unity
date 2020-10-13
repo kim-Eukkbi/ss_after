@@ -736,7 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 2
   itemImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  itemName: "\uC640\uC0CC\uC988"
+  itemName: "\uD574\uACE8 \uBAA8\uC591 \uC778\uCCB4\uBAA8\uD615"
   itemDes: "\uD0C0\uC785 : \uC9D5\uADF8\uB7EC\uC6C0                    \uC5B4\uB514\uC120\uAC00
     \uBCF8\uC801\uC788\uB294 \uBF08\uBC16\uC5D0 \uC5C6\uB294 \uC778\uCCB4\uBAA8\uD615\uC774\uB2E4.
     \uB208 \uD55C\uCABD\uC774 \uC774\uC0C1\uD558\uAC8C \uBE5B\uB09C\uB2E4."
@@ -3292,7 +3292,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1065439530}
-        m_MethodName: OpenMenu
+        m_MethodName: OffMenuWithNote
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4191,7 +4191,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1065439530}
-        m_MethodName: OpenMenu
+        m_MethodName: OffMenuWithNote
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5042,7 +5042,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1065439530}
-        m_MethodName: OpenMenu
+        m_MethodName: OffMenuWithNote
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
