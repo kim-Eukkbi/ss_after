@@ -4160,13 +4160,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameInfo:
-    itemLocation:
-    - {fileID: 2048219550}
-    - {fileID: 1642245000}
-    - {fileID: 1256217293}
-    - {fileID: 14793413}
     wisp: 200
   wispText: {fileID: 594787660}
+  itemLocation:
+  - {fileID: 2048219550}
+  - {fileID: 1642245000}
+  - {fileID: 1256217293}
+  - {fileID: 14793413}
 --- !u!4 &1291178263
 Transform:
   m_ObjectHideFlags: 0

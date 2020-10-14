@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameInfo gameInfo;
     public Text wispText;
 
+    public List<ItemLocation> itemLocation;
+
     public enum Rarity
     {
         COMMON,
@@ -62,6 +64,5 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameInfo
 {
-    public List<ItemLocation> itemLocation;
     public long wisp;
 }

@@ -120,7 +120,7 @@ public class ShopManager : MonoBehaviour
     public void UseItem()
     {
         uiManager.UseItem();
-        foreach (ItemLocation itmLoc in GameManager.instance.gameInfo.itemLocation)
+        foreach (ItemLocation itmLoc in GameManager.instance.itemLocation)
         {
             if (itmLoc.currentItem != null)
             {
