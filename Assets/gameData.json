@@ -1,3 +1,17 @@
 {
-    "coin": 200
+    "itemLocation": [
+        {
+            "instanceID": -28152
+        },
+        {
+            "instanceID": -28168
+        },
+        {
+            "instanceID": -28184
+        },
+        {
+            "instanceID": -28200
+        }
+    ],
+    "wisp": 200
 }

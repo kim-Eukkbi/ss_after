@@ -12,4 +12,5 @@ public class PopupInfo : MonoBehaviour
     public GameObject buyButton;
     public GameObject cancelButton;
     public GameObject useButton;
+    public GameObject removeButton;
 }

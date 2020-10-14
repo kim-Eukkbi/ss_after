@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class Gostcome : MonoBehaviour
 {
     public GameObject gost = null;
+    public List<GostScript> gosts;
     private int gost_Come_Per = 0;
 
     [SerializeField]

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class GameManager : MonoBehaviour
@@ -8,8 +9,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public GameInfo gameInfo;
+    public Text wispText;
 
-    void Awake()
+    public enum Rarity
+    {
+        COMMON,
+        RARE
+    }
+
+    private void Awake()
     {
         if (instance == null)
         {
@@ -20,6 +28,17 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Error : instance is not null");
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        LoadGameDataFromJson();
+        RefreshWispText();
+    }
+
+    public void RefreshWispText()
+    {
+        wispText.text = string.Format("도깨비불 : {0}", gameInfo.wisp);
     }
 
     // Json IO
@@ -43,5 +62,6 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameInfo
 {
-    public int coin;
+    public List<ItemLocation> itemLocation;
+    public long wisp;
 }
