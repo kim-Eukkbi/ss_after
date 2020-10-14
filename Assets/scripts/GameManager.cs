@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public GameInfo gameInfo;
     public Text wispText;
+    public int locatedItem = 0;
 
     public List<ItemLocation> itemLocation;
 

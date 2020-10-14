@@ -14,19 +14,29 @@ public class GostScript : MonoBehaviour
 
     private void GostOut()
     {
+        Invoke("LocationDelay", 60f);
         gameObject.SetActive(false);
+        gostInfo.currentLocation.comeon_Gost = null;
         Debug.Log("나감");
+    }
+
+    private void LocationDelay()
+    {
+        gostInfo.Is_Gost_Come = false;
     }
 }
 
 [System.Serializable]
 public class GostInfo
 {
-    [HideInInspector]
-    public bool Is_Gost_Out;
+    //[HideInInspector]
+    public bool Is_Gost_Come = false;
 
-    public string gostName;
-    public int gostComePersent;
-    public GameManager.Rarity gostRarity;
-    public int gostFavorability;
+    public ItemLocation currentLocation; // 현재 위치
+
+    public string gostName; // 이름
+    public string Come_item; // 커신이 등장하는 아이템타입
+    public float gostComePersent; // 올 확률
+    public GameManager.Rarity gostRarity; // 레어도
+    public int gostFavorability; // 호감도
 }

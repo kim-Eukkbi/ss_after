@@ -136,8 +136,12 @@ public class ShopManager : MonoBehaviour
     public void RemoveItem()
     {
         currentItem.location.currentItem = null;
+        currentItem.location.itemImage.SetActive(false);
         currentItem.location = null;
         currentItem.is_Located = false;
+
+        GameManager.instance.locatedItem -= 1;
+
         shopPopup.useButton.SetActive(true);
         shopPopup.removeButton.SetActive(false);
     }
@@ -145,6 +149,11 @@ public class ShopManager : MonoBehaviour
     public void PutItemInLocation(ItemLocation clickedLocation)
     {
         clickedLocation.currentItem = currentItem;
+        clickedLocation.itemImage.GetComponent<Image>().sprite = currentItem.itemImage;
+        clickedLocation.itemImage.SetActive(true);
+
+        GameManager.instance.locatedItem += 1;
+
         currentItem.location = clickedLocation;
         currentItem.is_Located = true;
         shopPopup.useButton.SetActive(false);
