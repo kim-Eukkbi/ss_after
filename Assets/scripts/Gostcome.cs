@@ -6,38 +6,43 @@ using UnityEngine.Rendering;
 
 public class Gostcome : MonoBehaviour
 {
-    public List<GostScript> gosts;
-    private List<GostScript> possibleGosts = new List<GostScript>();
+    public List<GostScript> gosts; // 모든 커신 정보
+    private List<GostScript> possibleGosts = new List<GostScript>(); // 아이템에 나올 수 있는 커신 정보
+    private ItemLocation currentLocation = null; // for문에서 사용하는 현재 위치 정보
 
-    private int gost_Come_idx = 0;
+    private int gost_Come_idx = 0; // 커신 랜덤 인덱스
 
     [SerializeField]
     private float maxTimer = 10f;
-    private float timer = 0f;
 
     private void FixedUpdate()
     {
         if (GameManager.instance.locatedItem <= 0)
-            return;
-
-        if (timer >= maxTimer)
         {
-            timer = 0f;
+            return;
+        }
 
-            for (int i = 0; i < GameManager.instance.itemLocation.Count; i++)
+        for (int i = 0; i < GameManager.instance.itemLocation.Count; i++)
+        {
+            currentLocation = GameManager.instance.itemLocation[i];
+
+            if (currentLocation.comeon_Gost == null)
             {
-                if (GameManager.instance.itemLocation[i].comeon_Gost == null)
+                if (currentLocation.currentItem != null)
                 {
-                    if (GameManager.instance.itemLocation[i].currentItem != null)
+                    if (currentLocation.timer >= maxTimer)
                     {
-                        GostRandomCome(GameManager.instance.itemLocation[i]);
+                        currentLocation.timer = 0f;
+
+                        GostRandomCome(currentLocation);
+                    }
+
+                    else
+                    {
+                        currentLocation.timer++;
                     }
                 }
             }
-        }
-        else
-        {
-            timer++;
         }
     }
 
@@ -58,26 +63,6 @@ public class Gostcome : MonoBehaviour
         {
             if (randomPoint < gostScripts[i].gostInfo.gostComePersent)
             {
-                /*
-                if (gostScripts[i].gostInfo.Is_Gost_Come) // 랜덤으로 선택된 커신이 이미 나온 상태일때
-                {
-                    int is_All_Gost_Come = 0;
-                    for (int j = 0; j < gostScripts.Count; j++)
-                    {
-                        if (gostScripts[j].gostInfo.Is_Gost_Come)
-                            is_All_Gost_Come += 1;
-                    }
-
-                    if (is_All_Gost_Come >= gostScripts.Count)  // 가능한 모든 커신이 나온 상태일때
-                    {
-                        Debug.Log("더이상 나올 커신이 없슴니다!!!");
-                        return 9999;
-                    }
-                    else
-                        return RandomMake(gostScripts); // 다시 랜덤해
-                }
-                */
-
                 return i;
             }
             else
@@ -94,6 +79,21 @@ public class Gostcome : MonoBehaviour
         foreach (GostScript gost in gosts)
         {
             Debug.Log("오고싶어하는 커신 : " + gost.gostInfo.gostName);
+
+            if (itemLocation.currentItem.itemPart.Equals(gost.gostInfo.favorite_item))
+            {
+                Debug.Log("출현 가능한 아이템임니다");
+
+                if (!gost.gostInfo.Is_Gost_Come)
+                {
+                    possibleGosts.Add(gost);
+                }
+                else
+                    Debug.Log("하지만 이미 나왔어요");
+
+                continue;
+            }
+
             string[] types = gost.gostInfo.Come_item.Split(',');
 
             foreach (string type in types)
