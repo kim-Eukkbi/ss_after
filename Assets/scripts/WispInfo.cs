@@ -5,5 +5,5 @@ using UnityEngine;
 public class WispInfo : MonoBehaviour
 {
     public Sprite wispImage;
-    public float wispSize;
+    public long wispSize;
 }

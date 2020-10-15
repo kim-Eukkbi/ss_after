@@ -126,13 +126,10 @@ public class ShopManager : MonoBehaviour
             shopPopup.itemPrice.text = "구매 완료";
             shopPopup.buyButton.SetActive(false);
             shopPopup.useButton.SetActive(true);
-
-            Debug.Log("구매완료");
-            Debug.Log("현재 돈 : " + GameManager.instance.gameInfo.wisp);
         }
         else
         {
-            Debug.Log("돈이 부족합니다!!");
+            shopPopup.itemPrice.text = "돈이 부족합니다!";
         }
     }
 
@@ -154,7 +151,25 @@ public class ShopManager : MonoBehaviour
 
     public void RemoveItem()
     {
+        if (currentItem.location.comeon_Gost != null)
+        {
+            shopPopup.itemPrice.text = "아이템에 커신이 붙어있어 회수할수 없습니다";
+            return;
+        }
+
+        if (currentItem.location.is_wisp_inArea)
+        {
+            GameManager.instance.gameInfo.wisp += currentItem.location.gostWisp.GetComponent<WispInfo>().wispSize;
+            GameManager.instance.RefreshWispText();
+            shopPopup.itemPrice.text = "도깨비불 + " + currentItem.location.gostWisp.GetComponent<WispInfo>().wispSize;
+            PoolManager.instance.InsertQueue(currentItem.location.gostWisp, PoolManager.PoolType.WISP);
+            currentItem.location.gostWisp = null;
+
+            currentItem.location.is_wisp_inArea = false;
+        }
+
         currentItem.location.currentItem = null;
+        currentItem.location.timer = 0f;
         currentItem.location.itemImage.SetActive(false);
         currentItem.location = null;
         currentItem.is_Located = false;

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class ShowParticle : MonoBehaviour
@@ -25,7 +24,7 @@ public class ShowParticle : MonoBehaviour
     {
         mousePos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        GameObject particlePrefab = PoolManager.current.GetQueue();
+        GameObject particlePrefab = PoolManager.instance.GetQueue(PoolManager.PoolType.PARTICLE);
         particlePrefab.transform.position = mousePos;
     }
 }

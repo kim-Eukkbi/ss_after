@@ -26,7 +26,7 @@ public class Gostcome : MonoBehaviour
         {
             currentLocation = GameManager.instance.itemLocation[i];
 
-            if (currentLocation.comeon_Gost == null)
+            if (currentLocation.comeon_Gost == null && !currentLocation.is_wisp_inArea)
             {
                 if (currentLocation.currentItem != null)
                 {

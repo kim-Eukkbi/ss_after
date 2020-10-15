@@ -20,7 +20,7 @@ public class TouchParticle : MonoBehaviour
     private float size = 0;
     private Vector2 direction = Vector2.zero;
     private SpriteRenderer touchSprite;
-    private void Start()
+    private void OnEnable()
     {
         touchSprite = GetComponent<SpriteRenderer>();
         direction = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
@@ -39,7 +39,7 @@ public class TouchParticle : MonoBehaviour
 
         if(touchSprite.color.a <= 0.1f)
         {
-            PoolManager.current.InsertQueue(gameObject);
+            PoolManager.instance.InsertQueue(gameObject, PoolManager.PoolType.PARTICLE);
         }
     }
 }

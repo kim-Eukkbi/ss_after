@@ -5,6 +5,7 @@ using UnityEngine;
 public class GostScript : MonoBehaviour
 {
     public GostInfo gostInfo;
+    private long myWisp = 0;
 
     void OnEnable()
     {
@@ -15,8 +16,20 @@ public class GostScript : MonoBehaviour
     private void GostOut()
     {
         Invoke("ComeDelay", 60f);
-        gameObject.SetActive(false);
+        gostInfo.currentLocation.gostWisp = PoolManager.instance.GetQueue(PoolManager.PoolType.WISP);
+        gostInfo.currentLocation.gostWisp.transform.position = this.transform.position;
+        if (this.gostInfo.gostRarity.Equals(GameManager.Rarity.COMMON))
+        {
+            myWisp = Random.Range(15, 30);
+        }
+        else if (this.gostInfo.gostRarity.Equals(GameManager.Rarity.RARE))
+        {
+            myWisp = Random.Range(20, 40);
+        }
+        gostInfo.currentLocation.gostWisp.GetComponent<WispInfo>().wispSize = myWisp; // 영혼의 무게 값
+        gostInfo.currentLocation.is_wisp_inArea = true;
         gostInfo.currentLocation.comeon_Gost = null;
+        gameObject.SetActive(false);
         Debug.Log("나감");
     }
 

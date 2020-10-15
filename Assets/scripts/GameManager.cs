@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void RefreshWispText()
     {
-        wispText.text = string.Format("도깨비불 : {0}", gameInfo.wisp);
+        wispText.text = string.Format(" : {0}", gameInfo.wisp);
     }
 
     // Json IO
