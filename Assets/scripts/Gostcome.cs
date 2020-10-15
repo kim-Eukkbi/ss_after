@@ -52,7 +52,8 @@ public class Gostcome : MonoBehaviour
 
         float randomPoint = Random.value * total;
 
-        gostScripts.Sort((GostScript A, GostScript B) => { return A.gostInfo.gostComePersent.CompareTo(B.gostInfo.gostComePersent); }); // 그냥 정렬해주는거임
+        gostScripts.Sort((GostScript A, GostScript B) => 
+        { return A.gostInfo.gostComePersent.CompareTo(B.gostInfo.gostComePersent); }); // 그냥 정렬해주는거임
 
         for (int i = 0; i < gostScripts.Count; i++)
         {
