@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
 
     public GameInfo gameInfo;
     public Text wispText;
-    public int locatedItem = 0;
+    public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 정보
 
-    public List<ItemLocation> itemLocation;
+    public List<ItemLocation> itemLocation; // 모든 위치 정보
 
     public enum Rarity
     {
@@ -65,5 +65,5 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameInfo
 {
-    public long wisp;
+    public long wisp; // 재화
 }
