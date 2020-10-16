@@ -11,7 +11,7 @@ public class GostScript : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void OnEnable()

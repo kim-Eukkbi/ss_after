@@ -78,10 +78,10 @@ public class Gostcome : MonoBehaviour
     private void GostRandomCome(ItemLocation itemLocation)
     {
         int rand = Random.Range(0, 100);
-
+        
         if (rand < 70)
         {
-            Debug.Log("응 못와");
+            //Debug.Log("응 못와");
             return;
         }
 
