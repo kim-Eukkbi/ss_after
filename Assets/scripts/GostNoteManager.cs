@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GostNoteManager : MonoBehaviour
 {
-    public int currentPage;
+    public int currentPage = 0;
     public List<GostNoteInfo> gostNotes;
 
     public void GostNoteUnlock(GostScript currentGost)
@@ -17,5 +17,17 @@ public class GostNoteManager : MonoBehaviour
                 gostNote.is_unlocked = true;
             }
         }
+    }
+
+    public void GoPageRight()
+    {
+        if(currentPage < gostNotes.Count - 1)
+            currentPage += 1;
+    }
+
+    public void GoPageLeft()
+    {
+        if (currentPage > 0)
+            currentPage -= 1;
     }
 }
