@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Error : instance is not null");
+            //Debug.LogError("Error : instance is not null");
             Destroy(this.gameObject);
         }
     }

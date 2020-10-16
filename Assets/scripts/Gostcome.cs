@@ -77,20 +77,28 @@ public class Gostcome : MonoBehaviour
 
     private void GostRandomCome(ItemLocation itemLocation)
     {
+        int rand = Random.Range(0, 100);
+
+        if (rand < 70)
+        {
+            Debug.Log("응 못와");
+            return;
+        }
+
         foreach (GostScript gost in gosts)
         {
-            Debug.Log("오고싶어하는 커신 : " + gost.gostInfo.gostName);
+            //Debug.Log("오고싶어하는 커신 : " + gost.gostInfo.gostName);
 
             if (itemLocation.currentItem.itemPart.Equals(gost.gostInfo.favorite_item))
             {
-                Debug.Log("출현 가능한 아이템임니다");
+                //Debug.Log("출현 가능한 아이템임니다");
 
                 if (!gost.gostInfo.Is_Gost_Come)
                 {
                     possibleGosts.Add(gost);
                 }
                 else
-                    Debug.Log("하지만 이미 나왔어요");
+                    //Debug.Log("하지만 이미 나왔어요");
 
                 continue;
             }
@@ -101,14 +109,14 @@ public class Gostcome : MonoBehaviour
             {
                 if (itemLocation.currentItem.itemType.Equals(type))
                 {
-                    Debug.Log("출현 가능한 아이템임니다");
+                    //Debug.Log("출현 가능한 아이템임니다");
 
                     if (!gost.gostInfo.Is_Gost_Come)
                     {
                         possibleGosts.Add(gost);
                     }
                     else
-                        Debug.Log("하지만 이미 나왔어요");
+                        //Debug.Log("하지만 이미 나왔어요");
 
                     break;
                 }

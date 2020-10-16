@@ -114,12 +114,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void Gostcheck()
-    {
-        gost_han_base.SetActive(true);
-    }
-
-
     private void All_NoteUse_Menu_Off_With_Ectv_off()
     {
         note_set.SetActive(false);
