@@ -38,7 +38,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadData();
+        FileInfo fi = new FileInfo(Path.Combine(Application.dataPath, "gameData.json"));
+
+        if (fi.Exists) 
+        {
+            LoadData();
+        }
+        else 
+        {
+            SaveData();
+        }
+
+        if (gameInfo.is_new_game)
+        {
+            gameInfo.is_new_game = false;
+
+            //TODO : 튜토리얼
+            //Debug.Log("튜토리얼임니다");
+
+            SaveData();
+        }
 
         RefreshWispText();
     }
@@ -47,17 +66,6 @@ public class GameManager : MonoBehaviour
     {
         LoadGameDataFromJson();
         shopManager.LoadItemDataFromJson();
-
-        if (gameInfo.is_new_game)
-        {
-            gameInfo.is_new_game = false;
-
-            //TODO : 튜토리얼
-            Debug.Log("튜토리얼임니다");
-
-            SaveGameDataToJson();
-            shopManager.SaveItemDataToJson();
-        }
     }
 
     public void SaveData()
