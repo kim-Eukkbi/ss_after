@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        FileInfo fi = new FileInfo(Path.Combine(Application.dataPath, "gameData.json"));
+        FileInfo fi = new FileInfo(Path.Combine(Application.persistentDataPath, "gameData.json"));
 
         if (fi.Exists) 
         {
@@ -84,14 +84,14 @@ public class GameManager : MonoBehaviour
     void SaveGameDataToJson()
     {
         string jsonData = JsonUtility.ToJson(gameInfo, true);
-        string path = Path.Combine(Application.dataPath, "gameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "gameData.json");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     void LoadGameDataFromJson()
     {
-        string path = Path.Combine(Application.dataPath, "gameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "gameData.json");
         string jsonData = File.ReadAllText(path);
         gameInfo = JsonUtility.FromJson<GameInfo>(jsonData);
     }
