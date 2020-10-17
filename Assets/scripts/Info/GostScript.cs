@@ -40,7 +40,7 @@ public class GostScript : MonoBehaviour
         gostInfo.currentLocation.is_wisp_inArea = true;
         gostInfo.currentLocation.comeon_Gost = null;
 
-        spriteRenderer.DOFade(0f, 3f).OnComplete(() => { gameObject.SetActive(false); });
+        spriteRenderer.DOFade(0f, 3f).OnComplete(() => { gameObject.SetActive(false); gostInfo.is_clicked = false; });
 
         //Debug.Log("나감");
     }
@@ -64,5 +64,5 @@ public class GostInfo
     public string favorite_item; // 커신이 좋아하는 아이템
     public float gostComePersent; // 올 확률
     public GameManager.Rarity gostRarity; // 레어도
-    public int gostFavorability; // 호감도
+    public bool is_clicked = false; // 커신을 눌렀는지 확인
 }

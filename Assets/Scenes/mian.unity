@@ -657,8 +657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2762343899f8f4689dee99c18485a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gostName: "\uC591\uB9D0\uC774"
-  is_unlocked: 0
+  noteInfo:
+    gostName: "\uC721\uBBF8\uD638"
+    gostFavorability: 0
 --- !u!114 &173811951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2009,7 +2010,7 @@ MonoBehaviour:
     favorite_item: 
     gostComePersent: 50
     gostRarity: 0
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!1 &490166642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,8 +2751,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2762343899f8f4689dee99c18485a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gostName: "\uC591\uB9D0\uC774"
-  is_unlocked: 0
+  noteInfo:
+    gostName: "\uC591\uB9D0\uC774"
+    gostFavorability: 0
 --- !u!1 &571059577
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,7 +3861,7 @@ MonoBehaviour:
     favorite_item: 
     gostComePersent: 40
     gostRarity: 0
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!212 &906669790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4233,9 +4235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gosts:
   - {fileID: 501568912185413193}
-  - {fileID: 474799885}
-  - {fileID: 1413339230}
-  - {fileID: 1213868380}
   maxTimer: 10
 --- !u!114 &957659422
 MonoBehaviour:
@@ -4250,8 +4249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPage: 0
-  gostNotes:
-  - {fileID: 568491934}
 --- !u!1 &966307967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,7 +5458,7 @@ MonoBehaviour:
     favorite_item: 
     gostComePersent: 40
     gostRarity: 0
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!212 &1146646231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5639,7 +5636,7 @@ MonoBehaviour:
     favorite_item: "\uD154\uB808\uBE44\uC804"
     gostComePersent: 10
     gostRarity: 1
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!1 &1216866381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,7 +6168,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 957659422}
-        m_MethodName: GostNoteUnlock
+        m_MethodName: Increase_GostFavorability
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 501568912185413193}
@@ -6248,9 +6245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopManager: {fileID: 1065439532}
+  gostNoteManager: {fileID: 957659422}
   gameInfo:
     wisp: 200
     is_new_game: 1
+    noteInfos: []
   wispText: {fileID: 594787660}
   locatedItem: 0
   itemLocation:
@@ -6258,6 +6257,9 @@ MonoBehaviour:
   - {fileID: 1642245000}
   - {fileID: 1256217293}
   - {fileID: 14793413}
+  gostNotes:
+  - {fileID: 568491934}
+  - {fileID: 173811950}
 --- !u!4 &1291178263
 Transform:
   m_ObjectHideFlags: 0
@@ -6821,7 +6823,7 @@ MonoBehaviour:
     favorite_item: "\uD45C\uBCF8"
     gostComePersent: 10
     gostRarity: 1
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!1 &1472009569
 GameObject:
   m_ObjectHideFlags: 0
@@ -10161,7 +10163,7 @@ MonoBehaviour:
     favorite_item: 
     gostComePersent: 40
     gostRarity: 0
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!212 &2143980750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10232,7 +10234,7 @@ MonoBehaviour:
     favorite_item: 
     gostComePersent: 50
     gostRarity: 0
-    gostFavorability: 0
+    is_clicked: 0
 --- !u!4 &1004723737663543826
 Transform:
   m_ObjectHideFlags: 0

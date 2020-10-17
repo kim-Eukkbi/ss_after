@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private ShopManager shopManager = null;
+    [SerializeField]
+    private GostNoteManager gostNoteManager;
 
     public GameInfo gameInfo;
     public Text wispText;
     public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 정보
 
     public List<ItemLocation> itemLocation; // 모든 위치 정보
+    public List<GostNoteInfo> gostNotes; // 모든 커신 노트의 정보
 
     public enum Rarity
     {
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //◇♠☞유니티 잣버그 났을때☜♠◇ --- ↓아래 코드 주석 풀고 실행하고 다시 주석 달아주셈요 ---
+        //SaveData();
+
         FileInfo fi = new FileInfo(Path.Combine(Application.persistentDataPath, "gameData.json"));
 
         if (fi.Exists) 
@@ -60,16 +66,29 @@ public class GameManager : MonoBehaviour
         }
 
         RefreshWispText();
+        gostNoteManager.RefreshGostNote();
     }
 
     public void LoadData()
     {
         LoadGameDataFromJson();
         shopManager.LoadItemDataFromJson();
+
+        for (int i = 0; i < gostNotes.Count; i++)
+        {
+            gostNotes[i].noteInfo = gameInfo.noteInfos[i];
+        }
     }
 
     public void SaveData()
     {
+        List<NoteInfo> noteInfos = new List<NoteInfo>();
+        foreach (GostNoteInfo gostNote in gostNotes)
+        {
+            noteInfos.Add(gostNote.noteInfo);
+        }
+        gameInfo.noteInfos = noteInfos.ToArray();
+
         SaveGameDataToJson();
         shopManager.SaveItemDataToJson();
     }
@@ -102,4 +121,5 @@ public class GameInfo
 {
     public long wisp = 200; // 재화
     public bool is_new_game = true;
+    public NoteInfo[] noteInfos;
 }
