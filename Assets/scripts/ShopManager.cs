@@ -126,6 +126,8 @@ public class ShopManager : MonoBehaviour
             shopPopup.itemPrice.text = "구매 완료";
             shopPopup.buyButton.SetActive(false);
             shopPopup.useButton.SetActive(true);
+
+            GameManager.instance.SaveData();
         }
         else
         {
@@ -161,6 +163,8 @@ public class ShopManager : MonoBehaviour
         {
             GameManager.instance.gameInfo.wisp += currentItem.location.gostWisp.GetComponent<WispInfo>().wispSize;
             GameManager.instance.RefreshWispText();
+            GameManager.instance.SaveData();
+
             shopPopup.itemPrice.text = "도깨비불 + " + currentItem.location.gostWisp.GetComponent<WispInfo>().wispSize;
             PoolManager.instance.InsertQueue(currentItem.location.gostWisp, PoolManager.PoolType.WISP);
             currentItem.location.gostWisp = null;
@@ -220,7 +224,7 @@ public class ShopManager : MonoBehaviour
 
     // Json IO
     [ContextMenu("To Json Data")]
-    void SaveItemDataToJson()
+    public void SaveItemDataToJson()
     {
         string jsonData = JsonUtility.ToJson(itemData, true);
         string path = Path.Combine(Application.dataPath, "itemData.json");
@@ -228,7 +232,7 @@ public class ShopManager : MonoBehaviour
     }
 
     [ContextMenu("From Json Data")]
-    void LoadItemDataFromJson()
+    public void LoadItemDataFromJson()
     {
         string path = Path.Combine(Application.dataPath, "itemData.json");
         string jsonData = File.ReadAllText(path);

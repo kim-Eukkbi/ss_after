@@ -6247,8 +6247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050f11f730e1c324dbdaeada1f9aa703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopManager: {fileID: 1065439532}
   gameInfo:
     wisp: 200
+    is_new_game: 1
   wispText: {fileID: 594787660}
   locatedItem: 0
   itemLocation:

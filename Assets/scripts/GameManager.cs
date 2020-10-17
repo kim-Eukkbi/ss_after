@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    [SerializeField]
+    private ShopManager shopManager = null;
+
     public GameInfo gameInfo;
     public Text wispText;
     public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 정보
@@ -35,8 +38,32 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadGameDataFromJson();
+        LoadData();
+
         RefreshWispText();
+    }
+
+    public void LoadData()
+    {
+        LoadGameDataFromJson();
+        shopManager.LoadItemDataFromJson();
+
+        if (gameInfo.is_new_game)
+        {
+            gameInfo.is_new_game = false;
+
+            //TODO : 튜토리얼
+            Debug.Log("튜토리얼임니다");
+
+            SaveGameDataToJson();
+            shopManager.SaveItemDataToJson();
+        }
+    }
+
+    public void SaveData()
+    {
+        SaveGameDataToJson();
+        shopManager.SaveItemDataToJson();
     }
 
     public void RefreshWispText()
@@ -46,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     // Json IO
     [ContextMenu("To Json Data")]
-    public void SaveGameDataToJson()
+    void SaveGameDataToJson()
     {
         string jsonData = JsonUtility.ToJson(gameInfo, true);
         string path = Path.Combine(Application.dataPath, "gameData.json");
@@ -54,7 +81,7 @@ public class GameManager : MonoBehaviour
     }
 
     [ContextMenu("From Json Data")]
-    public void LoadGameDataFromJson()
+    void LoadGameDataFromJson()
     {
         string path = Path.Combine(Application.dataPath, "gameData.json");
         string jsonData = File.ReadAllText(path);
@@ -65,5 +92,6 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameInfo
 {
-    public long wisp; // 재화
+    public long wisp = 200; // 재화
+    public bool is_new_game = true;
 }
