@@ -5,7 +5,7 @@ using UnityEngine;
 public class TouchParticle : MonoBehaviour
 {
     [SerializeField]
-    private Color[] colors;
+    private Color[] colors = null;
     [SerializeField]
     private float moveSpeed = 0.5f;
     [SerializeField]

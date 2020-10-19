@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject Ectv_button = null;
     public GameObject countiune_but = null;
     public GameObject quit_but = null;
-
+    public GameObject quit_popup = null;
     public GameObject note_set = null;
     public GameObject shop_base = null;
     public GameObject gostInfo_base = null;
@@ -24,6 +24,30 @@ public class UIManager : MonoBehaviour
     public GameObject gost_han_base = null;
 
     public GameObject LocationSelect;
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) )
+        {
+            
+            if (menu_set.activeInHierarchy)
+            {
+                Ectv_button.SetActive(true);
+                menu_set.SetActive(false);
+                menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
+            }
+            else
+            {
+                if(quit_popup.activeInHierarchy)
+                    quit_popup.SetActive(false);
+                else if(!quit_popup.activeInHierarchy)
+                    quit_popup.SetActive(true);
+                else
+                    return;
+            }
+        }
+    }
 
     private void Ectv_Active_true()
     {

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private ShopManager shopManager = null;
     [SerializeField]
-    private GostNoteManager gostNoteManager;
+    private GostNoteManager gostNoteManager = null;
 
     public GameInfo gameInfo;
     public Text wispText;
