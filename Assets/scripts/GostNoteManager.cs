@@ -1,17 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
+using UnityEngine.UI;
 
 public class GostNoteManager : MonoBehaviour
 {
     public int currentPage = 0;
+    public Text infoPage;
 
     public void RefreshGostNote()
     {
+        infoPage.text = string.Format("{0}", currentPage + 1);
+        GameManager.instance.gostNotes[currentPage].gameObject.SetActive(true);
+        GostNoteInfoOff();
+
         if (GameManager.instance.gostNotes[currentPage].noteInfo.gostFavorability > 0)
         {
-            GameManager.instance.gostNotes[currentPage].gameObject.SetActive(true);
+            GostNoteInfoOn();
+            
+            if(GameManager.instance.gostNotes[currentPage].noteInfo.gostFavorability > 2)
+            {
+                GameManager.instance.gostNotes[currentPage].info_isUnlock.SetActive(true);
+            }
         }
     }
 
@@ -35,13 +45,37 @@ public class GostNoteManager : MonoBehaviour
 
     public void GoPageRight()
     {
-        if(currentPage < GameManager.instance.gostNotes.Count - 1)
+        if (currentPage < GameManager.instance.gostNotes.Count - 1)
+        {
+            GameManager.instance.gostNotes[currentPage].gameObject.SetActive(false);
             currentPage += 1;
+            RefreshGostNote();
+        }
     }
 
     public void GoPageLeft()
     {
         if (currentPage > 0)
+        {
+            GameManager.instance.gostNotes[currentPage].gameObject.SetActive(false);
             currentPage -= 1;
+            RefreshGostNote();
+        }
     }
+
+    public void GostNoteInfoOff()
+    {
+        GameManager.instance.gostNotes[currentPage].infoName.SetActive(false);
+        GameManager.instance.gostNotes[currentPage].infoDes.SetActive(false);
+        GameManager.instance.gostNotes[currentPage].infoImage.SetActive(false);
+        GameManager.instance.gostNotes[currentPage].info_isUnlock.SetActive(false);
+    }
+
+    public void GostNoteInfoOn()
+    {
+        GameManager.instance.gostNotes[currentPage].infoName.SetActive(true);
+        GameManager.instance.gostNotes[currentPage].infoDes.SetActive(true);
+        GameManager.instance.gostNotes[currentPage].infoImage.SetActive(true);
+    }
+
 }

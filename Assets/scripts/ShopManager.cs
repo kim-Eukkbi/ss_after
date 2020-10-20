@@ -227,14 +227,14 @@ public class ShopManager : MonoBehaviour
     public void SaveItemDataToJson()
     {
         string jsonData = JsonUtility.ToJson(itemData, true);
-        string path = Path.Combine(Application.persistentDataPath, "itemData.json");
+        string path = Path.Combine(Application.persistentDataPath, "itemData.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     public void LoadItemDataFromJson()
     {
-        string path = Path.Combine(Application.persistentDataPath, "itemData.json");
+        string path = Path.Combine(Application.persistentDataPath, "itemData.txt");
         string jsonData = File.ReadAllText(path);
         itemData = JsonUtility.FromJson<ItemData>(jsonData);
     }

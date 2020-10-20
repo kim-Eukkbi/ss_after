@@ -44,7 +44,11 @@ public class GameManager : MonoBehaviour
         //◇♠☞유니티 잣버그 났을때☜♠◇ --- ↓아래 코드 주석 풀고 실행하고 다시 주석 달아주셈요 ---
         //SaveData();
 
-        FileInfo fi = new FileInfo(Path.Combine(Application.persistentDataPath, "gameData.json"));
+        // 위에 코드 안쳐도 게임 실행 전에(꼭 실행 전에!! 이거 중요함) 하이어락키 안에 게임매니져가서 게임매니져 컴포넌트에서
+        // ... 세운것 같이 생긴 모양 누르고 아래 나오는 매뉴중에서 "모두 초기화" 눌러도 됨니다
+        // 잣버그 났을 때 말고도 게임 진행상황 초기화하고 싶을때 사용하셈요
+
+        FileInfo fi = new FileInfo(Path.Combine(Application.persistentDataPath, "gameData.txt"));
 
         if (fi.Exists) 
         {
@@ -80,6 +84,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("모두 초기화")]
     public void SaveData()
     {
         List<NoteInfo> noteInfos = new List<NoteInfo>();
@@ -103,14 +108,14 @@ public class GameManager : MonoBehaviour
     void SaveGameDataToJson()
     {
         string jsonData = JsonUtility.ToJson(gameInfo, true);
-        string path = Path.Combine(Application.persistentDataPath, "gameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "gameData.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     void LoadGameDataFromJson()
     {
-        string path = Path.Combine(Application.persistentDataPath, "gameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "gameData.txt");
         string jsonData = File.ReadAllText(path);
         gameInfo = JsonUtility.FromJson<GameInfo>(jsonData);
     }
