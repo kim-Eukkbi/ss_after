@@ -10,7 +10,7 @@ public class ShopManager : MonoBehaviour
     public PopupInfo shopPopup;
 
     private UIManager uiManager;
-    private bool is_popuped = false;
+    private bool is_popUped = false;
     private ItemInfo currentItem;
 
     private void Start()
@@ -23,7 +23,7 @@ public class ShopManager : MonoBehaviour
     {
         currentItem = itemInfo;
 
-        if (!is_popuped)
+        if (!is_popUped)
         {
             shopPopup.itemImage.sprite = itemInfo.itemImage;
             shopPopup.itemName.text = itemInfo.itemName;
@@ -201,15 +201,15 @@ public class ShopManager : MonoBehaviour
 
     public void ShowAndRemovePopup()
     {
-        if (!is_popuped)
+        if (!is_popUped)
         {
             shopPopup.gameObject.SetActive(true);
-            is_popuped = true;
+            is_popUped = true;
         }
         else
         {
             shopPopup.gameObject.SetActive(false);
-            is_popuped = false;
+            is_popUped = false;
         }
     }
 
@@ -218,7 +218,7 @@ public class ShopManager : MonoBehaviour
         uiManager.is_Use_item = false;
         uiManager.LocationSelect.SetActive(false);
         shopPopup.gameObject.SetActive(false);
-        is_popuped = false;
+        is_popUped = false;
     }
 
 

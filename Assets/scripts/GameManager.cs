@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     [SerializeField]
-    private ShopManager shopManager = null;
+    private ShopManager shopManager = null; // 상점매니저
     [SerializeField]
-    private GostNoteManager gostNoteManager = null;
+    private GostNoteManager gostNoteManager = null; // 커신노트매니저
 
     public GameInfo gameInfo;
     public Text wispText;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         RARE
     }
 
-    private void Awake()
+    private void Awake() // 싱글톤
     {
         if (instance == null)
         {
@@ -73,19 +73,27 @@ public class GameManager : MonoBehaviour
         gostNoteManager.RefreshGostNote();
     }
 
-    public void LoadData()
+    public void LoadData() // 저장한 데이터 불러오기
     {
         LoadGameDataFromJson();
         shopManager.LoadItemDataFromJson();
 
-        for (int i = 0; i < gostNotes.Count; i++)
+        foreach (GostNoteInfo gostNote in gostNotes)
         {
-            gostNotes[i].noteInfo = gameInfo.noteInfos[i];
+            for (int i = 0; i < gameInfo.noteInfos.Length; i++)
+            {
+                if (gameInfo.noteInfos[i].gostName.Equals(gostNote.noteInfo.gostName))
+                {
+                    gostNote.noteInfo = gameInfo.noteInfos[i];
+
+                    break;
+                }
+            }
         }
     }
 
     [ContextMenu("모두 초기화")]
-    public void SaveData()
+    public void SaveData() // 현재 데이터 저장하기
     {
         List<NoteInfo> noteInfos = new List<NoteInfo>();
         foreach (GostNoteInfo gostNote in gostNotes)
@@ -98,7 +106,7 @@ public class GameManager : MonoBehaviour
         shopManager.SaveItemDataToJson();
     }
 
-    public void RefreshWispText()
+    public void RefreshWispText() // 도깨비불 텍스트 재설정
     {
         wispText.text = string.Format(" : {0}", gameInfo.wisp);
     }

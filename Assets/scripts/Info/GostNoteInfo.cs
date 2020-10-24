@@ -10,7 +10,6 @@ public class GostNoteInfo : MonoBehaviour
     public GameObject infoImage;
     public GameObject infoName;
     public GameObject infoDes;
-    public Text infoPage;
 }
 
 [System.Serializable]
