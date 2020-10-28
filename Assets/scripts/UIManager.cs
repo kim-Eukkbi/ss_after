@@ -31,6 +31,11 @@ public class UIManager : MonoBehaviour
         {
             if (menu_set.activeInHierarchy)
             {
+                if(quit_popup.activeInHierarchy)
+                {
+                    quit_popup.SetActive(false);
+                    return;
+                }
                 Ectv_button.SetActive(true);
                 menu_set.SetActive(false);
                 menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
@@ -146,7 +151,12 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void Quit()
+    public void Quit_popup()
+    {
+        quit_popup.SetActive(true);
+    }
+
+    public void Exit()
     {
         Application.Quit();
     }

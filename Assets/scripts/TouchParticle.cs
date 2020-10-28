@@ -23,7 +23,7 @@ public class TouchParticle : MonoBehaviour
     private void OnEnable()
     {
         touchSprite = GetComponent<SpriteRenderer>();
-        direction = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+        direction = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
         size = Random.Range(nimSize, maxSize);
         transform.localScale = new Vector2(size, size);
         touchSprite.color = colors[Random.Range(0, colors.Length)];
