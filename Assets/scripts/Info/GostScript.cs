@@ -8,6 +8,7 @@ public class GostScript : MonoBehaviour
     public GostInfo gostInfo;
     private long myWisp = 0;
     private SpriteRenderer spriteRenderer;
+    private WispInfo Wisp;
 
     private void Awake()
     {
@@ -27,7 +28,12 @@ public class GostScript : MonoBehaviour
     {
         Invoke("ComeDelay", 60f);
         gostInfo.currentLocation.gostWisp = PoolManager.instance.GetQueue(PoolManager.PoolType.WISP);
-        gostInfo.currentLocation.gostWisp.transform.position = this.transform.position;
+        Wisp = gostInfo.currentLocation.gostWisp.GetComponent<WispInfo>();
+
+        Wisp.currentLocation = gostInfo.currentLocation;
+        Wisp.transform.SetParent(PoolManager.instance.canvas.transform);
+        Wisp.transform.position = this.transform.position;
+
         if (this.gostInfo.gostRarity.Equals(GameManager.Rarity.COMMON))
         {
             myWisp = Random.Range(15, 30);
@@ -36,7 +42,7 @@ public class GostScript : MonoBehaviour
         {
             myWisp = Random.Range(20, 40);
         }
-        gostInfo.currentLocation.gostWisp.GetComponent<WispInfo>().wispSize = myWisp; // 영혼의 무게 값
+        Wisp.wispSize = myWisp; // 영혼의 무게 값
         gostInfo.currentLocation.is_wisp_inArea = true;
         gostInfo.currentLocation.comeon_Gost = null;
 

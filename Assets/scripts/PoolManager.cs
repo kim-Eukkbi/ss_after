@@ -8,6 +8,7 @@ public class PoolManager : MonoBehaviour
     private GameObject particle = null;
     [SerializeField]
     private GameObject gostWisp = null;
+    public GameObject canvas = null;
 
     [SerializeField]
     private int particleLength = 20;

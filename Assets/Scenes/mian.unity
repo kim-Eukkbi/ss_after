@@ -480,7 +480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74167119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.67, y: 6.58, z: 0}
+  m_LocalPosition: {x: 8.3, y: 4.7, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 2143980748}
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteInfo:
-    gostName: "\uCC98\uB140\uADC0\uC2E0"
+    gostName: "\uD558\uC900"
     gostFavorability: 0
   info_isUnlock: {fileID: 663931153}
   infoImage: {fileID: 676513381}
@@ -2028,6 +2028,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275047500}
   m_CullTransparentMesh: 0
+--- !u!1 &277525535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277525539}
+  - component: {fileID: 277525538}
+  - component: {fileID: 277525537}
+  - component: {fileID: 277525536}
+  m_Layer: 5
+  m_Name: WispCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &277525536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277525535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &277525537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277525535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 2960, y: 1440}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &277525538
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277525535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
+--- !u!224 &277525539
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277525535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &305855329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5, y: -11}
+  m_AnchoredPosition: {x: -5.95, y: -8.19}
   m_SizeDelta: {x: 20, y: 15}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &377912468
@@ -4225,8 +4323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 397, y: -132}
-  m_SizeDelta: {x: 350, y: 500}
+  m_AnchoredPosition: {x: 471, y: -90}
+  m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676513383
 MonoBehaviour:
@@ -4247,8 +4345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5714602251622856820, guid: b04b2030aaaf7e24880824728d699b17,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25354774c3af3684992ead7a3abe1f59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8853,7 +8950,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b5c575f2398010a4ea8ada6ea2e3866b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9222,8 +9319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 10, y: 10}
+  m_AnchoredPosition: {x: 6.68, y: -6.65}
+  m_SizeDelta: {x: 15.441874, y: 17.899496}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1681704101
 MonoBehaviour:
@@ -9268,12 +9365,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065439530}
-        m_MethodName: Gostcheck
-        m_Mode: 1
+      - m_Target: {fileID: 957659422}
+        m_MethodName: Increase_GostFavorability
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2143980749}
+          m_ObjectArgumentAssemblyTypeName: GostScript, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9501,8 +9598,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 2420873326722179131, guid: a95beb4738461744e8e0111e2f0eef5c,
     type: 3}
-  gostWisp: {fileID: 8067833662161001735, guid: 40a78d94069fc9243bb676bd0c25eb6e,
+  gostWisp: {fileID: 6203192351731608312, guid: 8c03f1f8515d0d641a1feef1bd70531d,
     type: 3}
+  canvas: {fileID: 277525535}
   particleLength: 80
   gostWispLength: 20
 --- !u!1 &1700730024

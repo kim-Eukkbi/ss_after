@@ -166,6 +166,7 @@ public class ShopManager : MonoBehaviour
             GameManager.instance.SaveData();
 
             shopPopup.itemPrice.text = "도깨비불 + " + currentItem.location.gostWisp.GetComponent<WispInfo>().wispSize;
+            currentItem.location.gostWisp.transform.SetParent(PoolManager.instance.transform);
             PoolManager.instance.InsertQueue(currentItem.location.gostWisp, PoolManager.PoolType.WISP);
             currentItem.location.gostWisp = null;
 
