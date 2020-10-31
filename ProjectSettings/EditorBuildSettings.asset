@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/title.unity
     guid: 5f346ce135cffae469f0dda234f42599
   - enabled: 1
+    path: Assets/Scenes/touchtitle.unity
+    guid: 85f40867729e98945ac9f3ad90fb9f88
+  - enabled: 1
     path: Assets/Scenes/mian.unity
     guid: 13f2d2405cc925e4ba6e56694953cff9
   m_configObjects: {}

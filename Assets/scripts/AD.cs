@@ -9,26 +9,22 @@ public class AD : MonoBehaviour
 
     public void Start()
     {
-#if UNITY_ANDROID
-        string appid = "ca-app-pub-7937364463261467~3963157556";
-#elif UNITY_IPHONE
-            string appid = "ca-app-pub-3940256099942544~1458002511";
-#else
+        #if UNITY_ANDROID
+            string appid = "ca-app-pub-7937364463261467~3963157556";
+        #else
             string appid = "unexpected_platform";
-#endif
+        #endif
 
         MobileAds.Initialize((initStatue) => { RequestBanner(); });
     }
 
     private void RequestBanner()
     {
-#if UNITY_ANDROID
-        string adUnitld = "ca-app-pub-7937364463261467/4476278976";
-#elif UNITY_IPHONE
-            string appid = "ca-app-pub-3940256099942544/2934735716";
-#else
+        #if UNITY_ANDROID
+            string adUnitld = "ca-app-pub-7937364463261467/4476278976";
+        #else
             string appid = "unexpected_platform";
-#endif
+        #endif
 
         this.bannerView = new BannerView(adUnitld, AdSize.Banner, AdPosition.Bottom);
 
