@@ -117,7 +117,7 @@ public class UIManager : MonoBehaviour
     private void OpenNoteWithMenu()   // 메뉴로 노트를 열 때
     {
         note_set.SetActive(true);
-        note_set.transform.DOMoveX(0.5f, 1f);
+        note_set.transform.DOMoveX(0.1f, 1f);
         note_set.transform.DORotate(new Vector3(0, 0, 10), 1);
     }
 
@@ -136,7 +136,7 @@ public class UIManager : MonoBehaviour
             LocationSelect.SetActive(false);
             note_set.SetActive(true);
             shop_base.SetActive(true);
-            note_set.transform.DOMoveX(0.5f, 1f);
+            note_set.transform.DOMoveX(0.1f, 1f);
             note_set.transform.DORotate(new Vector3(0, 0, 10), 1);
         }
     }
