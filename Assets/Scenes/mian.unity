@@ -6084,7 +6084,7 @@ MonoBehaviour:
   - {fileID: 1213868380}
   - {fileID: 2143980749}
   - {fileID: 1146646230}
-  maxTimer: 10
+  maxTimer: 20
 --- !u!114 &957659422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7622,7 +7622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteInfo:
-    gostName: "\uD558\uC900"
+    gostName: "\uC720\uC9C4"
     gostFavorability: 0
   info_isUnlock: {fileID: 45387498}
   infoImage: {fileID: 1729323961}
@@ -7935,8 +7935,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 10, y: 10}
+  m_AnchoredPosition: {x: 3.54, y: -7}
+  m_SizeDelta: {x: 17.094776, y: 23.176018}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1229967678
 MonoBehaviour:
@@ -7981,12 +7981,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065439530}
-        m_MethodName: Gostcheck
-        m_Mode: 1
+      - m_Target: {fileID: 957659422}
+        m_MethodName: Increase_GostFavorability
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1146646230}
+          m_ObjectArgumentAssemblyTypeName: GostScript, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8509,6 +8509,10 @@ MonoBehaviour:
     - gostName: "\uC721\uBBF8\uD638"
       gostFavorability: 0
     - gostName: "\uCC98\uB140\uADC0\uC2E0"
+      gostFavorability: 0
+    - gostName: "\uD558\uC900"
+      gostFavorability: 0
+    - gostName: "\uC720\uC9C4"
       gostFavorability: 0
   wispText: {fileID: 594787660}
   locatedItem: 0
@@ -10044,7 +10048,7 @@ MonoBehaviour:
   gostWisp: {fileID: 6203192351731608312, guid: 8c03f1f8515d0d641a1feef1bd70531d,
     type: 3}
   canvas: {fileID: 277525535}
-  particleLength: 80
+  particleLength: 100
   gostWispLength: 20
 --- !u!1 &1700730024
 GameObject:
