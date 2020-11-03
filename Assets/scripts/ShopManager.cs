@@ -13,6 +13,9 @@ public class ShopManager : MonoBehaviour
     private bool is_popUped = false;
     private ItemInfo currentItem;
 
+    private string jsonData;
+    private string path;
+
     private void Start()
     {
         uiManager = GetComponent<UIManager>();
@@ -227,16 +230,16 @@ public class ShopManager : MonoBehaviour
     [ContextMenu("To Json Data")]
     public void SaveItemDataToJson()
     {
-        string jsonData = JsonUtility.ToJson(itemData, true);
-        string path = Path.Combine(Application.persistentDataPath, "itemData.txt");
+        jsonData = JsonUtility.ToJson(itemData, true);
+        path = string.Concat(Application.persistentDataPath, "/", "itemData.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     public void LoadItemDataFromJson()
     {
-        string path = Path.Combine(Application.persistentDataPath, "itemData.txt");
-        string jsonData = File.ReadAllText(path);
+        path = string.Concat(Application.persistentDataPath, "/", "itemData.txt");
+        jsonData = File.ReadAllText(path);
         itemData = JsonUtility.FromJson<ItemData>(jsonData);
     }
 }

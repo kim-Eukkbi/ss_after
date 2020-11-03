@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private ShopManager shopManager = null; // 상점매니저
     [SerializeField]
     private GostNoteManager gostNoteManager = null; // 커신노트매니저
+    private string jsonData;
+    private string path;
 
     public GameInfo gameInfo;
     public Text wispText;
@@ -47,8 +49,9 @@ public class GameManager : MonoBehaviour
         // 위에 코드 안쳐도 게임 실행 전에(꼭 실행 전에!! 이거 중요함) 하이어락키 안에 게임매니져가서 게임매니져 컴포넌트에서
         // ... 세운것 같이 생긴 모양 누르고 아래 나오는 매뉴중에서 "모두 초기화" 눌러도 됨니다
         // 잣버그 났을 때 말고도 게임 진행상황 초기화하고 싶을때 사용하셈요
-
-        FileInfo fi = new FileInfo(Path.Combine(Application.persistentDataPath, "gameData.txt"));
+        gameInfo = new GameInfo();
+        shopManager.itemData = new ItemData();
+        FileInfo fi = new FileInfo(string.Concat(Application.persistentDataPath, "/", "gameData.txt"));
 
         if (fi.Exists) 
         {
@@ -115,16 +118,16 @@ public class GameManager : MonoBehaviour
     [ContextMenu("To Json Data")]
     void SaveGameDataToJson()
     {
-        string jsonData = JsonUtility.ToJson(gameInfo, true);
-        string path = Path.Combine(Application.persistentDataPath, "gameData.txt");
+        jsonData = JsonUtility.ToJson(gameInfo, true);
+        path = string.Concat(Application.persistentDataPath, "/", "gameData.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     void LoadGameDataFromJson()
     {
-        string path = Path.Combine(Application.persistentDataPath, "gameData.txt");
-        string jsonData = File.ReadAllText(path);
+        path = string.Concat(Application.persistentDataPath, "/", "gameData.txt");
+        jsonData = File.ReadAllText(path);
         gameInfo = JsonUtility.FromJson<GameInfo>(jsonData);
     }
 }
