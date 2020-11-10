@@ -104,6 +104,40 @@ public class ShopManager : MonoBehaviour
                         shopPopup.buyButton.SetActive(true);
                     }
                     break;
+
+                case 5:
+
+                    if (itemData.item5_isActive)
+                    {
+                        shopPopup.itemPrice.text = "구매 완료";
+
+                        if (itemInfo.is_Located)
+                            shopPopup.removeButton.SetActive(true);
+                        else
+                            shopPopup.useButton.SetActive(true);
+                    }
+                    else
+                    {
+                        shopPopup.buyButton.SetActive(true);
+                    }
+                    break;
+
+                case 6:
+
+                    if (itemData.item6_isActive)
+                    {
+                        shopPopup.itemPrice.text = "구매 완료";
+
+                        if (itemInfo.is_Located)
+                            shopPopup.removeButton.SetActive(true);
+                        else
+                            shopPopup.useButton.SetActive(true);
+                    }
+                    else
+                    {
+                        shopPopup.buyButton.SetActive(true);
+                    }
+                    break;
             }
 
             ShowAndRemovePopup();
@@ -125,6 +159,10 @@ public class ShopManager : MonoBehaviour
                 itemData.item3_isActive = true;
             else if (currentItem.itemNum == 4)
                 itemData.item4_isActive = true;
+            else if (currentItem.itemNum == 5)
+                itemData.item5_isActive = true;
+            else if (currentItem.itemNum == 6)
+                itemData.item6_isActive = true;
 
             shopPopup.itemPrice.text = "구매 완료";
             shopPopup.buyButton.SetActive(false);
@@ -251,4 +289,6 @@ public class ItemData
     public bool item2_isActive;
     public bool item3_isActive;
     public bool item4_isActive;
+    public bool item5_isActive;
+    public bool item6_isActive;
 }
