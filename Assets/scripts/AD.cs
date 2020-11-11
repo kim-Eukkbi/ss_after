@@ -9,7 +9,6 @@ public class AD : MonoBehaviour
     private BannerView bannerView;
     private InterstitialAd screenAd;
     private RewardedAd rewardedAd;
-
     public void Start()
     {
     #if UNITY_ANDROID
@@ -72,9 +71,10 @@ public class AD : MonoBehaviour
     {
         string type = args.Type;
         double amount = args.Amount;
-        Debug.Log(
-             "이 광고를 보고 이러한 보상을 얻었슴니다 : "
-                 + amount.ToString() + " " + type);
+        /*        Debug.Log(
+                     "이 광고를 보고 이러한 보상을 얻었슴니다 : "
+                         + amount.ToString() + " " + type);*/
+        GameManager.instance.gameInfo.wisp += 30;
     }
 
     public void HandleRewardedAdClosed(object sender, EventArgs args)

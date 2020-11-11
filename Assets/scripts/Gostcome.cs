@@ -9,6 +9,7 @@ public class Gostcome : MonoBehaviour
     public List<GostScript> gosts; // 모든 커신 정보
     private List<GostScript> possibleGosts = new List<GostScript>(); // 아이템에 나올 수 있는 커신 정보
     private ItemLocation currentLocation = null; // for문에서 사용하는 현재 위치 정보
+    //private GameManager gameManager;
 
     private int gost_Come_idx = 0; // 커신 랜덤 인덱스
 

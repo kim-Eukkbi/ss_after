@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 84225082}
   - component: {fileID: 84225081}
   m_Layer: 5
-  m_Name: gost_YoungHo_Info
+  m_Name: gost_SeonHo_Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4320,7 +4320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &597762155
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5543,7 +5543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &772472091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6151,7 +6151,7 @@ GameObject:
   - component: {fileID: 906669790}
   - component: {fileID: 906669789}
   m_Layer: 0
-  m_Name: gost_YungHo
+  m_Name: gost_SeonHo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6165,7 +6165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906669787}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -395.9999, y: 96, z: 0}
+  m_LocalPosition: {x: 5.25, y: 96, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 769402040}
@@ -6188,9 +6188,9 @@ MonoBehaviour:
   gostInfo:
     Is_Gost_Come: 0
     currentLocation: {fileID: 0}
-    gostName: "\uC601\uD638"
+    gostName: "\uC120\uD638"
     Come_item: "\uB0A1\uC740 \uAC83,\uB9DD\uAC00\uC9C4 \uAC83"
-    favorite_item: 
+    favorite_item: "\uB0A1\uC740 \uAC83"
     gostComePersent: 40
     gostRarity: 0
     is_clicked: 0
@@ -13152,7 +13152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB984 : \uC720\uC9C4\uC774\n\uB098\uC624\uB294 \uBE48\uB3C4 : \uC790\uC8FC
+  m_Text: "\uC774\uB984 : \uC120\uD638\n\uB098\uC624\uB294 \uBE48\uB3C4 : \uC790\uC8FC
     \uB098\uC634\n\uC88B\uC544\uD558\uB294 \uC7A5\uBE44 : \uC9D5\uADF8\uB7EC\uC6B4
     \uAC83\uB9CC \uC544\uB2C8\uBA74 \uB2E4 \uC88B\uC544\uD558\uB294 \uAC83 \uAC19\uB2E4.\n"
 --- !u!222 &2052719616
