@@ -98,9 +98,15 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        while (shopManager.itemData.itemLocationInfo.Count < shopManager.item_Count)
+        {
+            shopManager.itemData.itemLocationInfo.Add(new ItemLocationInfo());
+            shopManager.itemData.item_isActive.Add(new bool());
+        }
+
         foreach (ItemLocation itemLocation in itemLocations)
         {
-            for (int i = 0; i < shopManager.item_Count; i++)
+            for (int i = 0; i < shopManager.itemData.itemLocationInfo.Count; i++)
             {
                 if (itemLocation.locationPage.Equals(shopManager.itemData.itemLocationInfo[i].locationPage)
                     && itemLocation.locationNum.Equals(shopManager.itemData.itemLocationInfo[i].locationNum))
@@ -113,7 +119,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [ContextMenu("모두 초기화")]
     public void SaveData() // 현재 데이터 저장하기
     {
         List<NoteInfo> noteInfos = new List<NoteInfo>();
@@ -125,6 +130,30 @@ public class GameManager : MonoBehaviour
 
         SaveGameDataToJson();
         shopManager.SaveItemDataToJson();
+    }
+
+    [ContextMenu("모두 초기화")]
+    public void ResetData()
+    {
+        FileInfo fi = new FileInfo(string.Concat(Application.persistentDataPath, "/", "gameData2.txt"));
+        try
+        {
+            fi.Delete();
+        }
+        catch (IOException e)
+        {
+            Debug.Log(e.Message);
+        }
+
+        fi = new FileInfo(string.Concat(Application.persistentDataPath, "/", "itemData2.txt"));
+        try
+        {
+            fi.Delete();
+        }
+        catch (IOException e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 
     public void RefreshWispText() // 도깨비불 텍스트 재설정
