@@ -179,4 +179,9 @@ public class UIManager : MonoBehaviour
         setting_base.SetActive(true);
         OpenNoteWithMenu();
     }
+
+    public void OpenRewardAdPopup()
+    {
+        // 리워드 팝업 만들기
+    }
 }

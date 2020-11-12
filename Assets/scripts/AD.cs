@@ -21,8 +21,8 @@ public class AD : MonoBehaviour
             RequestBanner();
             //RequestReward();
         });
-        //InitAd();
-        //Invoke("ShowScnAd", 15f);
+        InitAd();
+        Invoke("ShowScnAd", 15f);
     }
 
     // ---------------------------------------배너 광고
@@ -43,7 +43,7 @@ public class AD : MonoBehaviour
     // ---------------------------------------배너 광고
 
     // ---------------------------------------리워드 광고
-    public void RequestReward()
+ /*   public void RequestReward()
     {
         #if UNITY_ANDROID
             string adUnitId = "ca-app-pub-3940256099942544/5224354917"; // 테스트 리워드광고 ID
@@ -71,9 +71,9 @@ public class AD : MonoBehaviour
     {
         string type = args.Type;
         double amount = args.Amount;
-        /*        Debug.Log(
+        *//*        Debug.Log(
                      "이 광고를 보고 이러한 보상을 얻었슴니다 : "
-                         + amount.ToString() + " " + type);*/
+                         + amount.ToString() + " " + type);*//*
         GameManager.instance.gameInfo.wisp += 30;
     }
 
@@ -88,7 +88,7 @@ public class AD : MonoBehaviour
         {
             this.rewardedAd.Show();
         }
-    }
+    }*/
     // ---------------------------------------리워드 광고
 
     // ---------------------------------------전면 광고
