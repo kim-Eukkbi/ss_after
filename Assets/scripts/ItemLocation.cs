@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemLocation : MonoBehaviour
 {
     public int locationPage; // 맵 정보
+    public int locationNum; // 장소 번호
     public ItemInfo currentItem = null; // 현재 위치에 있는 아이템 정보
     public GameObject selectBtn; // 위치 선택 버튼 정보
     public GostScript comeon_Gost = null; // 현재 위치에 있는 커신 정보

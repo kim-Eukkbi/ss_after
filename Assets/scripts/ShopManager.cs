@@ -8,6 +8,10 @@ public class ShopManager : MonoBehaviour
 {
     public ItemData itemData;
     public PopupInfo shopPopup;
+    public int item_Count = 0;
+
+    [SerializeField]
+    private GameObject itemBox;
 
     private UIManager uiManager;
     private bool is_popUped = false;
@@ -16,9 +20,10 @@ public class ShopManager : MonoBehaviour
     private string jsonData;
     private string path;
 
-    private void Start()
+    private void Awake()
     {
         uiManager = GetComponent<UIManager>();
+        item_Count = itemBox.transform.childCount;
     }
 
     // 아이템을 클릭할시
@@ -36,108 +41,17 @@ public class ShopManager : MonoBehaviour
             shopPopup.useButton.SetActive(false);
             shopPopup.removeButton.SetActive(false);
 
-            switch (itemInfo.itemNum)   // 현재 아이템의 번호
+            if (itemData.item_isActive[currentItem.itemNum - 1])
             {
-                case 1:
-
-                    if (itemData.item1_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
-
-                case 2:
-
-                    if (itemData.item2_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
-
-                case 3:
-
-                    if (itemData.item3_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
-
-                case 4:
-
-                    if (itemData.item4_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
-
-                case 5:
-
-                    if (itemData.item5_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
-
-                case 6:
-
-                    if (itemData.item6_isActive)
-                    {
-                        shopPopup.itemPrice.text = "구매 완료";
-
-                        if (itemInfo.is_Located)
-                            shopPopup.removeButton.SetActive(true);
-                        else
-                            shopPopup.useButton.SetActive(true);
-                    }
-                    else
-                    {
-                        shopPopup.buyButton.SetActive(true);
-                    }
-                    break;
+                shopPopup.itemPrice.text = "구매 완료";
+                if (itemInfo.is_Located)
+                    shopPopup.removeButton.SetActive(true);
+                else
+                    shopPopup.useButton.SetActive(true);
+            }
+            else
+            {
+                shopPopup.buyButton.SetActive(true);
             }
 
             ShowAndRemovePopup();
@@ -151,18 +65,7 @@ public class ShopManager : MonoBehaviour
             GameManager.instance.gameInfo.wisp -= currentItem.itemPrice;
             GameManager.instance.RefreshWispText();
 
-            if (currentItem.itemNum == 1)
-                itemData.item1_isActive = true;
-            else if (currentItem.itemNum == 2)
-                itemData.item2_isActive = true;
-            else if (currentItem.itemNum == 3)
-                itemData.item3_isActive = true;
-            else if (currentItem.itemNum == 4)
-                itemData.item4_isActive = true;
-            else if (currentItem.itemNum == 5)
-                itemData.item5_isActive = true;
-            else if (currentItem.itemNum == 6)
-                itemData.item6_isActive = true;
+            itemData.item_isActive[currentItem.itemNum - 1] = true;
 
             shopPopup.itemPrice.text = "구매 완료";
             shopPopup.buyButton.SetActive(false);
@@ -179,7 +82,7 @@ public class ShopManager : MonoBehaviour
     public void UseItem()
     {
         uiManager.UseItem();
-        foreach (ItemLocation itmLoc in GameManager.instance.itemLocation)
+        foreach (ItemLocation itmLoc in GameManager.instance.itemLocations)
         {
             if (itmLoc.currentItem != null)
             {
@@ -214,6 +117,10 @@ public class ShopManager : MonoBehaviour
             currentItem.location.is_wisp_inArea = false;
         }
 
+        itemData.itemLocationInfo[currentItem.itemNum - 1].locationPage = 0;
+        itemData.itemLocationInfo[currentItem.itemNum - 1].locationNum = 0;
+        GameManager.instance.SaveData();
+
         currentItem.location.currentItem = null;
         currentItem.location.timer = 0f;
         currentItem.location.itemImage.SetActive(false);
@@ -232,6 +139,11 @@ public class ShopManager : MonoBehaviour
         clickedLocation.itemImage.GetComponent<Image>().sprite = currentItem.itemImage;
         clickedLocation.itemImage.SetActive(true);
 
+        itemData.itemLocationInfo[currentItem.itemNum - 1].locationPage = clickedLocation.locationPage;
+        itemData.itemLocationInfo[currentItem.itemNum - 1].locationNum = clickedLocation.locationNum;
+
+        GameManager.instance.SaveData();
+
         GameManager.instance.locatedItem += 1;
 
         currentItem.location = clickedLocation;
@@ -239,6 +151,23 @@ public class ShopManager : MonoBehaviour
         shopPopup.useButton.SetActive(false);
         shopPopup.removeButton.SetActive(true);
         UseItem();
+    }
+
+    public void PutItemInLocation(ItemLocation clickedLocation, ItemInfo itemInfo)
+    {
+        clickedLocation.currentItem = itemInfo;
+        clickedLocation.itemImage.GetComponent<Image>().sprite = itemInfo.itemImage;
+        clickedLocation.itemImage.SetActive(true);
+
+        itemData.itemLocationInfo[itemInfo.itemNum - 1].locationPage = clickedLocation.locationPage;
+        itemData.itemLocationInfo[itemInfo.itemNum - 1].locationNum = clickedLocation.locationNum;
+
+        GameManager.instance.SaveData();
+
+        GameManager.instance.locatedItem += 1;
+
+        itemInfo.location = clickedLocation;
+        itemInfo.is_Located = true;
     }
 
     public void ShowAndRemovePopup()
@@ -269,14 +198,14 @@ public class ShopManager : MonoBehaviour
     public void SaveItemDataToJson()
     {
         jsonData = JsonUtility.ToJson(itemData, true);
-        path = string.Concat(Application.persistentDataPath, "/", "itemData.txt");
+        path = string.Concat(Application.persistentDataPath, "/", "itemData2.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     public void LoadItemDataFromJson()
     {
-        path = string.Concat(Application.persistentDataPath, "/", "itemData.txt");
+        path = string.Concat(Application.persistentDataPath, "/", "itemData2.txt");
         jsonData = File.ReadAllText(path);
         itemData = JsonUtility.FromJson<ItemData>(jsonData);
     }
@@ -285,10 +214,13 @@ public class ShopManager : MonoBehaviour
 [System.Serializable]
 public class ItemData
 {
-    public bool item1_isActive;
-    public bool item2_isActive;
-    public bool item3_isActive;
-    public bool item4_isActive;
-    public bool item5_isActive;
-    public bool item6_isActive;
+    public List<bool> item_isActive;
+    public List<ItemLocationInfo> itemLocationInfo;
+}
+
+[System.Serializable]
+public class ItemLocationInfo
+{
+    public int locationPage;
+    public int locationNum;
 }

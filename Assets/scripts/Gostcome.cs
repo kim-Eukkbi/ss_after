@@ -9,7 +9,6 @@ public class Gostcome : MonoBehaviour
     public List<GostScript> gosts; // 모든 커신 정보
     private List<GostScript> possibleGosts = new List<GostScript>(); // 아이템에 나올 수 있는 커신 정보
     private ItemLocation currentLocation = null; // for문에서 사용하는 현재 위치 정보
-    //private GameManager gameManager;
 
     private int gost_Come_idx = 0; // 커신 랜덤 인덱스
 
@@ -23,9 +22,9 @@ public class Gostcome : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < GameManager.instance.itemLocation.Count; i++)
+        for (int i = 0; i < GameManager.instance.itemLocations.Count; i++)
         {
-            currentLocation = GameManager.instance.itemLocation[i];
+            currentLocation = GameManager.instance.itemLocations[i];
 
             if (currentLocation.comeon_Gost == null && !currentLocation.is_wisp_inArea)
             {

@@ -17,9 +17,10 @@ public class GameManager : MonoBehaviour
 
     public GameInfo gameInfo;
     public Text wispText;
-    public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 정보
+    public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 갯수
 
-    public List<ItemLocation> itemLocation; // 모든 위치 정보
+    public List<ItemLocation> itemLocations; // 모든 위치 정보
+    public List<ItemInfo> itemInfos; // 모든 아이템 정보
     public List<GostNoteInfo> gostNotes; // 모든 커신 노트의 정보
 
     public enum Rarity
@@ -51,13 +52,16 @@ public class GameManager : MonoBehaviour
         // 잣버그 났을 때 말고도 게임 진행상황 초기화하고 싶을때 사용하셈요
         gameInfo = new GameInfo();
         shopManager.itemData = new ItemData();
-        FileInfo fi = new FileInfo(string.Concat(Application.persistentDataPath, "/", "gameData.txt"));
+        shopManager.itemData.item_isActive = new List<bool>(new bool[shopManager.item_Count]);
+        shopManager.itemData.itemLocationInfo = new List<ItemLocationInfo>(new ItemLocationInfo[shopManager.item_Count]);
 
-        if (fi.Exists) 
+        FileInfo fi = new FileInfo(string.Concat(Application.persistentDataPath, "/", "gameData2.txt"));
+
+        if (fi.Exists)
         {
             LoadData();
         }
-        else 
+        else
         {
             SaveData();
         }
@@ -93,6 +97,20 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        foreach (ItemLocation itemLocation in itemLocations)
+        {
+            for (int i = 0; i < shopManager.item_Count; i++)
+            {
+                if (itemLocation.locationPage.Equals(shopManager.itemData.itemLocationInfo[i].locationPage)
+                    && itemLocation.locationNum.Equals(shopManager.itemData.itemLocationInfo[i].locationNum))
+                {
+                    //Debug.Log("현재 위치와 아이템 정보가 일치함");
+                    shopManager.PutItemInLocation(itemLocation, itemInfos[i]);
+                    locatedItem++;
+                }
+            }
+        }
     }
 
     [ContextMenu("모두 초기화")]
@@ -119,14 +137,14 @@ public class GameManager : MonoBehaviour
     void SaveGameDataToJson()
     {
         jsonData = JsonUtility.ToJson(gameInfo, true);
-        path = string.Concat(Application.persistentDataPath, "/", "gameData.txt");
+        path = string.Concat(Application.persistentDataPath, "/", "gameData2.txt");
         File.WriteAllText(path, jsonData);
     }
 
     [ContextMenu("From Json Data")]
     void LoadGameDataFromJson()
     {
-        path = string.Concat(Application.persistentDataPath, "/", "gameData.txt");
+        path = string.Concat(Application.persistentDataPath, "/", "gameData2.txt");
         jsonData = File.ReadAllText(path);
         gameInfo = JsonUtility.FromJson<GameInfo>(jsonData);
     }
