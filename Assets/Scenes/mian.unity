@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteInfo:
-    gostName: "\uC601\uD638"
+    gostName: "\uC120\uD638"
     gostFavorability: 0
   info_isUnlock: {fileID: 887203932}
   infoImage: {fileID: 2122787011}
@@ -5671,8 +5671,8 @@ RectTransform:
   - {fileID: 1413339229}
   - {fileID: 2143980748}
   - {fileID: 1146646229}
-  - {fileID: 906669788}
   - {fileID: 1213868378}
+  - {fileID: 906669788}
   - {fileID: 1360976488}
   m_Father: {fileID: 1644789563}
   m_RootOrder: 1
@@ -5973,9 +5973,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB984 : \uC120\uD638\n\uB098\uC624\uB294 \uBE48\uB3C4 : \uC790\uC8FC
-    \uB098\uC634\n\uC88B\uC544\uD558\uB294 \uC7A5\uBE44 : \uC9D5\uADF8\uB7EC\uC6B4
-    \uAC83\uB9CC \uC544\uB2C8\uBA74 \uB2E4 \uC88B\uC544\uD558\uB294 \uAC83 \uAC19\uB2E4.\n"
+  m_Text: "\uC774\uB984 : \uC800\uC2B9\uC0AC\uC790\n\uB098\uC624\uB294 \uBE48\uB3C4
+    : \uAC00\uB054 \uB098\uC634\n\uC88B\uC544\uD558\uB294 \uC7A5\uBE44 : \uBCA0\uAC1C\uB97C
+    \uC88B\uC544\uD55C\uB2E4\n"
 --- !u!222 &870068502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6398,7 +6398,7 @@ Transform:
   - {fileID: 769402040}
   - {fileID: 1700730025}
   m_Father: {fileID: 782560941}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &906669789
 MonoBehaviour:
@@ -7309,7 +7309,7 @@ MonoBehaviour:
     \uD53C\uB294 \uC544\uB9C8 \uCF54\uD53C\uC778\uAC83 \uAC19\uB2E4."
   itemType: "\uB0A1\uC740 \uAC83"
   itemPart: "\uBC30\uAC8C"
-  itemPrice: 300
+  itemPrice: 140
 --- !u!114 &1013087543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9001,7 +9001,7 @@ Transform:
   - {fileID: 1050736409}
   - {fileID: 1045319323}
   m_Father: {fileID: 782560941}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1213868380
 MonoBehaviour:
@@ -10348,11 +10348,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 1. \uC804\uD654\uBCA8 \uC18C\uB9AC\uB9CC \uB4E4\uC73C\uBA74
-    \uD654\uB4E4\uC9DD \uB180\uB780\uB2E4.\n\n\uBA54\uBAA8 2. '\uC8C4\uC1A1\uD569\uB2C8\uB2E4'\uAC00
-    \uC785\uBC84\uB987\uC778 \uAC83 \uAC19\uB2E4.\n\n\uBA54\uBAA8 3. \uADC0\uC2E0\uB3C4
-    \uC7A0\uC744 \uC790\uB098? \uAE30\uB300\uC11C \uC790\uB294\uAC78 \uD2B9\uD788
-    \uC88B\uC544\uD558\uB294 \uB4EF."
+  m_Text: "\uBA54\uBAA8 1. \uB298 \uBC14\uBE60\uBCF4\uC778\uB2E4! \uADF8\uB9AC\uACE0
+    \uD53C\uACE4\uD574 \uBCF4\uC778\uB2E4\n\n\uBA54\uBAA8 2. \uB298 \uAC80\uC815\uC0C9
+    \uBE44\uB2D0\uBD09\uC9C0\uB97C \uAC00\uC9C0\uACE0 \uB2E4\uB2CC\uB2E4\n\n\uBA54\uBAA8
+    3. \uC548\uC744 \uC2AC\uCA4D \uBD24\uB294\uB370 \uD55C\uC790\uAC00 3\uAC1C\uC529
+    \uBE7C\uACE1\uD788 \uC801\uD600\uC788\uC5C8\uB2E4"
 --- !u!222 &1352318350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10540,7 +10540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteInfo:
-    gostName: "\uC601\uD638"
+    gostName: "\uC800\uC2B9\uC0AC\uC790"
     gostFavorability: 0
   info_isUnlock: {fileID: 835941607}
   infoImage: {fileID: 701788094}
@@ -12055,8 +12055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.091, y: 4.028}
-  m_SizeDelta: {x: 19.1374, y: 26.58485}
+  m_AnchoredPosition: {x: -7.19, y: 3.97}
+  m_SizeDelta: {x: 19.11166, y: 26.470665}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1700730026
 MonoBehaviour:
@@ -12101,12 +12101,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065439530}
-        m_MethodName: Gostcheck
-        m_Mode: 1
+      - m_Target: {fileID: 957659422}
+        m_MethodName: Increase_GostFavorability
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 906669789}
+          m_ObjectArgumentAssemblyTypeName: GostScript, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12131,7 +12131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12326,6 +12326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63a2ff692dfb5b4790f1a65b2a9b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shop_base: {fileID: 597762154}
 --- !u!4 &1738181959
 Transform:
   m_ObjectHideFlags: 0

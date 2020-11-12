@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
+using System.Reflection;
 
 public class AD : MonoBehaviour
 {
     private BannerView bannerView;
     private InterstitialAd screenAd;
     private RewardedAd rewardedAd;
+    public GameObject shop_base = null;
+
+    private bool shopOpen = false;
     public void Start()
     {
     #if UNITY_ANDROID
@@ -21,8 +25,29 @@ public class AD : MonoBehaviour
             RequestBanner();
             //RequestReward();
         });
-        InitAd();
-        Invoke("ShowScnAd", 15f);
+        //InitAd();
+        //Invoke("ShowScnAd", 15f);
+    }
+
+    public void Update()
+    {
+        if (shopOpen == true)
+        {
+            if (!shop_base.activeInHierarchy)
+            {
+                shopOpen = false;
+            }
+            return;
+        }
+        if (shopOpen == false)
+        {
+            if (shop_base.activeInHierarchy)
+            {
+                InitAd();
+                ShowScnAd();
+                shopOpen = true;
+            }
+        }
     }
 
     // ---------------------------------------배너 광고
