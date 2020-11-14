@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private ShopManager shopManager = null; // 상점매니저
     [SerializeField]
     private GostNoteManager gostNoteManager = null; // 커신노트매니저
+    [SerializeField]
+    private Help helpManager = null; // 도움말
     private string jsonData;
     private string path;
 
@@ -68,10 +70,9 @@ public class GameManager : MonoBehaviour
 
         if (gameInfo.is_new_game)
         {
+            helpManager.OpenHelp();
             gameInfo.is_new_game = false;
 
-            //TODO : 튜토리얼
-            //Debug.Log("튜토리얼임니다");
 
             SaveData();
         }
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < shopManager.itemData.itemLocationInfo.Count; i++)
             {
                 if (itemLocation.locationPage.Equals(shopManager.itemData.itemLocationInfo[i].locationPage)
-                    && itemLocation.locationNum.Equals(shopManager.itemData.itemLocationInfo[i].locationNum))
+                    && itemLocation.locationNum.Equals(shopManager.itemData.itemLocationInfo[i].locationNum)) 
                 {
                     //Debug.Log("현재 위치와 아이템 정보가 일치함");
                     shopManager.PutItemInLocation(itemLocation, itemInfos[i]);

@@ -76,7 +76,7 @@ public class Gostcome : MonoBehaviour
     {
         int rand = Random.Range(0, 100);
         
-        if (rand < 80)
+        if (rand < 90)
         {
             //Debug.Log("응 못와");
             return;
