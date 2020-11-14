@@ -36,11 +36,11 @@ public class GostScript : MonoBehaviour
 
         if (this.gostInfo.gostRarity.Equals(GameManager.Rarity.COMMON))
         {
-            myWisp = Random.Range(15, 30);
+            myWisp = Random.Range(10, 15);
         }
         else if (this.gostInfo.gostRarity.Equals(GameManager.Rarity.RARE))
         {
-            myWisp = Random.Range(20, 40);
+            myWisp = Random.Range(20, 30);
         }
         Wisp.wispSize = myWisp; // 영혼의 무게 값
         gostInfo.currentLocation.is_wisp_inArea = true;

@@ -8,6 +8,7 @@ public class Help : MonoBehaviour
     public GameObject helpBase = null;
     public GameObject rightArrow = null;
     public GameObject leftArrow = null;
+    public GameObject Exit = null;
     public GameInfo gameInfo = new GameInfo();
 
     private int i = 0;
@@ -19,6 +20,7 @@ public class Help : MonoBehaviour
         helpImage[0].SetActive(true);
         rightArrow.SetActive(true);
         leftArrow.SetActive(true);
+        Exit.SetActive(true);
     }
 
     public void LeftArrow()
@@ -27,10 +29,7 @@ public class Help : MonoBehaviour
         {
             if (i == 0)
             {
-                helpBase.SetActive(false);
-                helpImage[i].SetActive(false);
-                i = 0;
-                OffArrow();
+                OffAll();
                 return;
             }
             helpImage[i].SetActive(false);
@@ -45,10 +44,7 @@ public class Help : MonoBehaviour
         {
             if (i == 4)
             {
-                helpBase.SetActive(false);
-                helpImage[i].SetActive(false);
-                i = 0;
-                OffArrow();
+                OffAll();
                 return;
             }
             helpImage[i].SetActive(false);
@@ -57,9 +53,18 @@ public class Help : MonoBehaviour
         }
     }
 
-    private void OffArrow()
+    public void OffAll()
+    {
+        helpBase.SetActive(false);
+        helpImage[i].SetActive(false);
+        i = 0;
+        OffEct();
+    }
+
+    private void OffEct()
     {
         rightArrow.SetActive(false);
         leftArrow.SetActive(false);
+        Exit.SetActive(false);
     }
 }
