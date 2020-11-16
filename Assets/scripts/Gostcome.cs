@@ -14,6 +14,8 @@ public class Gostcome : MonoBehaviour
 
     [SerializeField]
     private float maxTimer = 10f;
+    public float comepersent = 10f;
+
 
     private void FixedUpdate()
     {
@@ -76,7 +78,7 @@ public class Gostcome : MonoBehaviour
     {
         int rand = Random.Range(0, 100);
         
-        if (rand < 90)
+        if (rand < (100 - comepersent))
         {
             //Debug.Log("응 못와");
             return;
