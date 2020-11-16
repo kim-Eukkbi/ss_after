@@ -9,7 +9,10 @@ public class GostNoteInfo : MonoBehaviour
     public GameObject info_isUnlock;
     public GameObject infoImage;
     public GameObject infoName;
-    public GameObject infoDes;
+    public GameObject infoImportant;
+    public GameObject infoDes1;
+    public GameObject infoDes2;
+    public GameObject infoDes3;
 }
 
 [System.Serializable]
