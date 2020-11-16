@@ -444,7 +444,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 2. \u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 2. \uBE64\uC791\uAC70\uB9AC\uB294\uAC78 \uC88B\uC544\uD558\uB294\uAC70
+    \uAC19\uB2E4"
 --- !u!222 &25203175
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -876,7 +877,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 3. \u3161\u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 3. \uC7A5\uB09C\uCE58\uB294\uAC78 \uC88B\uC544\uD558\uB098?"
 --- !u!222 &79296980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1657,7 +1658,7 @@ MonoBehaviour:
   gostInfo:
     Is_Gost_Come: 0
     currentLocation: {fileID: 0}
-    gostName: "\uC720\uB9C1\uC774(\uAC00\uBA85)"
+    gostName: "\uC720\uB9C1\uC774"
     Come_item: "\uC9D5\uADF8\uB7EC\uC6B4 \uAC83,\uB9DD\uAC00\uC9C4 \uAC83,\uB0A1\uC740
       \uAC83"
     favorite_item: 
@@ -2322,10 +2323,10 @@ MonoBehaviour:
   location: {fileID: 0}
   itemNum: 8
   itemImage: {fileID: 0}
-  itemName: "\uCD09\uB9E4"
+  itemName: "\uCD09\uB9E4(\uAC1C\uBC1C\uC911)"
   itemDes: "\uC774\uAC78 \uBC14\uB2E5\uC5D0 \uBFCC\uB9AC\uBA74 \uADC0\uC2E0\uC774
     \uC798\uC628\uB2E4\uB294 \uC18C\uBB38\uC774 \uC788\uB2E4"
-  itemType: '-'
+  itemType: "\uAC1C\uBC1C\uC911\uC785\uB2C8\uB2E4 \uAD6C\uB9E4\uD558\uC9C0 \uB9C8\uC2ED\uC2DC\uC624"
   itemPart: '-'
   itemPrice: 999999
 --- !u!114 &211124559
@@ -2562,7 +2563,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 3. \u3161\u3161\u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 3. \uC591\uB9D0\uC774 \uBC1C\uD1B1\uB54C\uBB38\uC5D0 \uBB34\uC11C\uC6CC
+    \uD558\uB294\uAC70 \uAC19\uB2E4 "
 --- !u!222 &251770493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4082,7 +4084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386735911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -2.15, z: 0}
+  m_LocalPosition: {x: 5.73, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1558265826}
@@ -6323,8 +6325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 10, y: 10}
+  m_AnchoredPosition: {x: 5.713, y: -7.28}
+  m_SizeDelta: {x: 10.056808, y: 9.375034}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &601011474
 MonoBehaviour:
@@ -7790,7 +7792,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 1. \u3161\u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 1. \uB3D9\uC804\uC744 \uB5A8\uC5B4\uB728\uB838\uB354\uB2C8
+    \uBD80\uB9AC\uB85C \uBB3C\uC5B4\uAC00\uB824\uACE0 \uD588\uB2E4"
 --- !u!222 &747241241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8444,7 +8447,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 1. \u3161\u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 1. \uC12C\uC720\uC720\uC5F0\uC81C \uD5A5\uC774 \uB098\uB294\uAC70
+    \uAC19\uB2E4"
 --- !u!222 &813068289
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8626,7 +8630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844065984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -2.15, z: 0}
+  m_LocalPosition: {x: 1.2, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134860517}
@@ -8732,7 +8736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0.5254539, b: 0.8663123, a: 1}
+  m_Color: {r: 0.9528302, g: 0.22921856, b: 0.8782308, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10921,7 +10925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969469709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 2.54, z: 0}
+  m_LocalPosition: {x: -5.84, y: 0.49, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1360976488}
@@ -11638,7 +11642,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB984 : \uC720\uB9C1\uC774(\uAC00\uBA85)\n"
+  m_Text: "\uC774\uB984 : \uC720\uB9C1\uC774\n"
 --- !u!222 &1030635424
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12316,7 +12320,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uBAA8 2. \u3161\u3161\u3161\u3161\u3161"
+  m_Text: "\uBA54\uBAA8 2. \uC591\uB9D0\uC774\uAC00 \uC720\uB9C1\uC774 \uCC9C\uC73C\uB85C
+    \uC7A5\uB09C\uCE58\uB294\uAC78 \uC88B\uC544\uD55C\uB2E4"
 --- !u!222 &1086886097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14461,8 +14466,8 @@ MonoBehaviour:
   - {fileID: 1184021462}
   - {fileID: 84225081}
   - {fileID: 1377874809}
-  - {fileID: 1377874809}
-  - {fileID: 1377874809}
+  - {fileID: 983536264}
+  - {fileID: 452680190}
 --- !u!4 &1291178263
 Transform:
   m_ObjectHideFlags: 0
@@ -16079,7 +16084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558265825}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -395.9999, y: 96, z: 0}
+  m_LocalPosition: {x: -507.44, y: 96, z: 0}
   m_LocalScale: {x: 35, y: 35, z: 0}
   m_Children:
   - {fileID: 386735912}
@@ -16102,7 +16107,7 @@ MonoBehaviour:
   gostInfo:
     Is_Gost_Come: 0
     currentLocation: {fileID: 0}
-    gostName: "\uAE4C\uB9C8\uAE30(\uAC00\uBA85)"
+    gostName: "\uAE4C\uB9C8\uAE30"
     Come_item: "\uC9D5\uADF8\uB7EC\uC6B4 \uAC83,\uB9DD\uAC00\uC9C4 \uAC83,\uB0A1\uC740
       \uAC83"
     favorite_item: 
@@ -18250,9 +18255,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 10, y: 10}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1.0800146, y: 1.2381757}
+  m_SizeDelta: {x: 9.659111, y: 9.886372}
+  m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1799983002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20660,7 +20665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130576052
 RectTransform:
   m_ObjectHideFlags: 0
