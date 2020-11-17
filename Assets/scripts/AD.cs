@@ -43,8 +43,8 @@ public class AD : MonoBehaviour
         {
             if (shop_base.activeInHierarchy)
             {
-                InitAd();
-                ShowScnAd();
+                /*InitAd();
+                ShowScnAd();*/
                 shopOpen = true;
             }
         }
