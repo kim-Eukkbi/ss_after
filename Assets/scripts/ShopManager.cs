@@ -33,6 +33,10 @@ public class ShopManager : MonoBehaviour
 
         if (!is_popUped)
         {
+            if (itemInfo.itemPrice == 0)
+            {
+                return;
+            }
             shopPopup.itemImage.sprite = itemInfo.itemImage;
             shopPopup.itemName.text = itemInfo.itemName;
             shopPopup.itemDes.text = string.Format("타입 : {0}\n{1}", itemInfo.itemType, itemInfo.itemDes);
@@ -40,7 +44,6 @@ public class ShopManager : MonoBehaviour
             shopPopup.buyButton.SetActive(false);
             shopPopup.useButton.SetActive(false);
             shopPopup.removeButton.SetActive(false);
-
             if (itemData.item_isActive[currentItem.itemNum - 1])
             {
                 shopPopup.itemPrice.text = "구매 완료";
