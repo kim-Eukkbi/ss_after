@@ -29,14 +29,15 @@ public class ShopManager : MonoBehaviour
     // 아이템을 클릭할시
     public void OnClickItem(ItemInfo itemInfo)
     {
-        currentItem = itemInfo;
+        if (itemInfo.itemPrice.Equals(0))
+        {
+            return;
+        }
 
         if (!is_popUped)
         {
-            if (itemInfo.itemPrice == 0)
-            {
-                return;
-            }
+            currentItem = itemInfo;
+
             shopPopup.itemImage.sprite = itemInfo.itemImage;
             shopPopup.itemName.text = itemInfo.itemName;
             shopPopup.itemDes.text = string.Format("타입 : {0}\n{1}", itemInfo.itemType, itemInfo.itemDes);
