@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameInfo gameInfo;
     public Text wispText;
     public int locatedItem = 0; // 모든 맵에 설치되어 있는 아이템 갯수
+    public float comepersent = 10f;
 
     public List<ItemLocation> itemLocations; // 모든 위치 정보
     public List<ItemInfo> itemInfos; // 모든 아이템 정보

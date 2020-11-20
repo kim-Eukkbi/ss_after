@@ -19,7 +19,7 @@ public class catalyst : MonoBehaviour
         {
             catalystOverCount--;
             catalysTimer = 120;
-            gostmanager.comepersent = 10f;
+            //gostmanager.comepersent = 10f;
             return;
         }
         if(catalystCount < catalystOverCount)
@@ -27,6 +27,7 @@ public class catalyst : MonoBehaviour
             catalysTimer -= Time.deltaTime;
         }
     }
+    /*
     public void UseCatalysts()
     {
         if(catalysTimer != 0 && catalystCount < catalystOverCount)
@@ -42,4 +43,5 @@ public class catalyst : MonoBehaviour
         gostmanager.comepersent = 20f;
         catalystCount--;
     }
+    */
 }

@@ -1814,6 +1814,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &117621285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,6 +3233,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &193490763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3508,12 +3510,13 @@ MonoBehaviour:
   location: {fileID: 0}
   itemNum: 9
   itemImage: {fileID: 21300000, guid: 8760daa26bac5e04fba36b460fb7b7e7, type: 3}
-  itemName: "\uCD09\uB9E4(\uAD6C\uB9E4 \uBD88\uAC00\uB2A5)"
-  itemDes: "\uC124\uCE58\uD558\uBA74 120\uCD08 \uB3D9\uC548 \uCEE4\uC2E0\uC774 \uC62C
-    \uD655\uB960\uC774 \uC62C\uB77C\uAC04\uB2E4"
-  itemType: "\uC18C\uBAA8\uD488(\uAC1C\uBC1C\uC911)"
+  itemName: "\uD5A5\uCD08"
+  itemDes: "\uC88B\uC740 \uD5A5\uAE30\uAC00 \uB098\uB294 \uD5A5\uCD08\uB2E4. \uC124\uCE58\uD558\uBA74
+    \uCEE4\uC2E0\uC774 \uC62C \uD655\uB960\uC774 \uC57D\uAC04 \uC62C\uB77C\uAC04\uB2E4"
+  itemType: "\uCD09\uB9E4"
   itemPart: 
-  itemPrice: 90000000
+  itemPrice: 50
+  itemPersent: 10
 --- !u!114 &211124559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4237,6 +4240,7 @@ MonoBehaviour:
   itemType: "\uB9DD\uAC00\uC9C4 \uAC83"
   itemPart: "\uCEF4\uD4E8\uD130"
   itemPrice: 160
+  itemPersent: 0
 --- !u!114 &263188268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4906,7 +4910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 1380}
+  m_AnchoredPosition: {x: 535.9999, y: 1380}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305855331
@@ -5440,6 +5444,7 @@ MonoBehaviour:
   itemType: "\uB9DD\uAC00\uC9C4 \uAC83"
   itemPart: "\uC804\uD654\uAE30"
   itemPrice: 100
+  itemPersent: 0
 --- !u!114 &358646779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5876,6 +5881,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &390312357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6907,6 +6913,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &501886278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8954,6 +8961,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &634009420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9181,6 +9189,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &645809196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10246,6 +10255,7 @@ MonoBehaviour:
   itemType: "\uB9DD\uAC00\uC9C4 \uAC83"
   itemPart: "\uD154\uB808\uBE44\uC804"
   itemPrice: 220
+  itemPersent: 0
 --- !u!114 &741616971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14030,7 +14040,6 @@ MonoBehaviour:
   - {fileID: 1558265827}
   - {fileID: 134860518}
   maxTimer: 45
-  comepersent: 10
 --- !u!114 &957659422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15253,6 +15262,7 @@ MonoBehaviour:
   itemType: "\uB0A1\uC740 \uAC83"
   itemPart: "\uBCA0\uAC1C"
   itemPrice: 140
+  itemPersent: 0
 --- !u!114 &1013087543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17323,6 +17333,7 @@ MonoBehaviour:
   itemType: "\uB0A1\uC740 \uAC83"
   itemPart: "\uC778\uD615"
   itemPrice: 80
+  itemPersent: 0
 --- !u!114 &1170711971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18995,6 +19006,7 @@ MonoBehaviour:
       gostFavorability: 0
   wispText: {fileID: 594787660}
   locatedItem: 0
+  comepersent: 10
   itemLocations:
   - {fileID: 2048219550}
   - {fileID: 1642245000}
@@ -19826,6 +19838,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &1370668012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21676,6 +21689,7 @@ MonoBehaviour:
   itemType: "\uC9D5\uADF8\uB7EC\uC6B4 \uAC83"
   itemPart: "\uBAA8\uD615"
   itemPrice: 120
+  itemPersent: 0
 --- !u!114 &1638718003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23002,6 +23016,7 @@ MonoBehaviour:
   itemType: "\uC9D5\uADF8\uB7EC\uC6B4 \uAC83"
   itemPart: "\uD45C\uBCF8"
   itemPrice: 90
+  itemPersent: 0
 --- !u!114 &1740460154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24694,6 +24709,7 @@ MonoBehaviour:
   itemType: 
   itemPart: 
   itemPrice: 0
+  itemPersent: 0
 --- !u!114 &1832732094
 MonoBehaviour:
   m_ObjectHideFlags: 0

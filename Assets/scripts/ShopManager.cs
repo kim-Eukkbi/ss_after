@@ -121,6 +121,11 @@ public class ShopManager : MonoBehaviour
             currentItem.location.is_wisp_inArea = false;
         }
 
+        if (currentItem.itemType.Equals("촉매"))
+        {
+            GameManager.instance.comepersent -= currentItem.itemPersent;
+        }
+
         itemData.itemLocationInfo[currentItem.itemNum - 1].locationPage = 0;
         itemData.itemLocationInfo[currentItem.itemNum - 1].locationNum = 0;
         GameManager.instance.SaveData();
@@ -139,6 +144,10 @@ public class ShopManager : MonoBehaviour
 
     public void PutItemInLocation(ItemLocation clickedLocation)
     {
+        if (currentItem.itemType.Equals("촉매"))
+        {
+            GameManager.instance.comepersent += currentItem.itemPersent;
+        }
         clickedLocation.currentItem = currentItem;
         clickedLocation.itemImage.GetComponent<Image>().sprite = currentItem.itemImage;
         clickedLocation.itemImage.SetActive(true);
@@ -159,6 +168,10 @@ public class ShopManager : MonoBehaviour
 
     public void PutItemInLocation(ItemLocation clickedLocation, ItemInfo itemInfo)
     {
+        if (itemInfo.itemType.Equals("촉매"))
+        {
+            GameManager.instance.comepersent += itemInfo.itemPersent;
+        }
         clickedLocation.currentItem = itemInfo;
         clickedLocation.itemImage.GetComponent<Image>().sprite = itemInfo.itemImage;
         clickedLocation.itemImage.SetActive(true);

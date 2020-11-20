@@ -16,4 +16,5 @@ public class ItemInfo : MonoBehaviour
     public string itemType; // 아이템 타입
     public string itemPart; // 아이템 타입2
     public int itemPrice; // 아이템 가격
+    public int itemPersent;
 }
