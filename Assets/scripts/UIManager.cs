@@ -27,21 +27,29 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) )
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (menu_set.activeInHierarchy)
+            if(menu_set.activeInHierarchy)
+            {
+                menu_set.SetActive(false);
+                menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
+                Ectv_button.SetActive(true);
+                return;
+            }
+            if (note_set.activeInHierarchy)
             {
                 if(quit_popup.activeInHierarchy)
                 {
                     quit_popup.SetActive(false);
                     return;
                 }
+                note_set.transform.DOMoveX(5f, 1f);
+                note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(Ectv_Active_true_with_Off_Menu);
                 Ectv_button.SetActive(true);
-                menu_set.SetActive(false);
-                menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
             }
             else
             {
+
                 if(quit_popup.activeInHierarchy)
                     quit_popup.SetActive(false);
                 else if(!quit_popup.activeInHierarchy)
@@ -90,7 +98,7 @@ public class UIManager : MonoBehaviour
             {
                 menu_base.SetActive(true);
                 menu_set.SetActive(true);
-                menu_base.transform.DOMoveX(2f, 0.5f).OnComplete(Ectv_Active_true);
+                menu_base.transform.DOMoveX(2f, 0.5f).OnComplete(All_NoteUse_Menu_Off);
                 Ectv_button.SetActive(false);
             }
         }
@@ -148,10 +156,22 @@ public class UIManager : MonoBehaviour
         gostInfo_base.SetActive(false);
         setting_base.SetActive(false);
         Ectv_off();
+    } 
+    private void All_NoteUse_Menu_Off()
+    {
+        note_set.SetActive(false);
+        shop_base.SetActive(false);
+        gostInfo_base.SetActive(false);
+        setting_base.SetActive(false);
     }
 
 
     public void Quit_popup()
+    {
+        quit_popup.SetActive(true);
+    }
+
+    public void Quit_popup_Off()
     {
         quit_popup.SetActive(true);
     }
