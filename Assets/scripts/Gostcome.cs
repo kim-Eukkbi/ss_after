@@ -88,7 +88,7 @@ public class Gostcome : MonoBehaviour
         {
             //Debug.Log("오고싶어하는 커신 : " + gost.gostInfo.gostName);
 
-            if (itemLocation.currentItem.itemPart.Equals(gost.gostInfo.favorite_item))
+            if (itemLocation.currentItem.itemPart.Equals(gost.gostInfo.favorite_item) && gost.gostInfo.gostRarity.Equals(GameManager.Rarity.RARE))
             {
                 //Debug.Log("출현 가능한 아이템임니다");
 
