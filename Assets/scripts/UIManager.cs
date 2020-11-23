@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     public GameObject setting_base = null;
 
     public GameObject LocationSelect;
-
+    public GameObject DelLocationSelect;
 
     private void Update()
     {

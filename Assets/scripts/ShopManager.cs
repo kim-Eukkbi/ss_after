@@ -142,6 +142,44 @@ public class ShopManager : MonoBehaviour
         shopPopup.removeButton.SetActive(false);
     }
 
+    public void RemoveItem(ItemLocation itemLocation)
+    {
+        if (itemLocation.comeon_Gost != null)
+        {
+            return;
+        }
+
+        if (itemLocation.is_wisp_inArea)
+        {
+            GameManager.instance.gameInfo.wisp += itemLocation.gostWisp.GetComponent<WispInfo>().wispSize;
+            GameManager.instance.RefreshWispText();
+            GameManager.instance.SaveData();
+
+            itemLocation.gostWisp.transform.SetParent(PoolManager.instance.transform);
+            PoolManager.instance.InsertQueue(itemLocation.gostWisp, PoolManager.PoolType.WISP);
+            itemLocation.gostWisp = null;
+
+            itemLocation.is_wisp_inArea = false;
+        }
+
+        if (itemLocation.currentItem.itemType.Equals("촉매"))
+        {
+            GameManager.instance.comepersent -= itemLocation.currentItem.itemPersent;
+        }
+
+        itemData.itemLocationInfo[itemLocation.currentItem.itemNum - 1].locationPage = 0;
+        itemData.itemLocationInfo[itemLocation.currentItem.itemNum - 1].locationNum = 0;
+        GameManager.instance.SaveData();
+
+        itemLocation.timer = 0f;
+        itemLocation.itemImage.SetActive(false);
+        itemLocation.currentItem.location = null;
+        itemLocation.currentItem.is_Located = false;
+        itemLocation.currentItem = null;
+
+        GameManager.instance.locatedItem -= 1;
+    }
+
     public void PutItemInLocation(ItemLocation clickedLocation)
     {
         if (currentItem.itemType.Equals("촉매"))
