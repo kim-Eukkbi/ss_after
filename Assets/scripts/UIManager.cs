@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private bool is_Ectv_pressed = true;
 
     public bool is_Use_item = false;
+    public bool is_Del_item = false;
 
     public GameObject menu_set = null;
     public GameObject Ectv_button = null;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject LocationSelect;
     public GameObject DelLocationSelect;
+    public GameObject DelButton;
 
     private void Update()
     {
@@ -34,6 +36,7 @@ public class UIManager : MonoBehaviour
                 menu_set.SetActive(false);
                 menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
                 Ectv_button.SetActive(true);
+                DelButton.SetActive(true);
                 return;
             }
             if (note_set.activeInHierarchy)
@@ -46,6 +49,7 @@ public class UIManager : MonoBehaviour
                 note_set.transform.DOMoveX(5f, 1f);
                 note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(Ectv_Active_true_with_Off_Menu);
                 Ectv_button.SetActive(true);
+                DelButton.SetActive(true);
             }
             else
             {
@@ -90,12 +94,14 @@ public class UIManager : MonoBehaviour
 
             if (menu_set.activeInHierarchy)
             {
+                DelButton.SetActive(true);
                 Ectv_button.SetActive(true);
                 menu_set.SetActive(false);
                 menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
             }
             else
             {
+                DelButton.SetActive(false);
                 menu_base.SetActive(true);
                 menu_set.SetActive(true);
                 menu_base.transform.DOMoveX(2f, 0.5f).OnComplete(All_NoteUse_Menu_Off);
@@ -117,6 +123,7 @@ public class UIManager : MonoBehaviour
     {
         if (note_set.activeInHierarchy)
         {
+            DelButton.SetActive(true);
             note_set.transform.DOMoveX(5f, 1f);
             note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(All_NoteUse_Menu_Off_With_Ectv_off);
         }
@@ -146,6 +153,22 @@ public class UIManager : MonoBehaviour
             shop_base.SetActive(true);
             note_set.transform.DOMoveX(0.1f, 1f);
             note_set.transform.DORotate(new Vector3(0, 0, 10), 1);
+        }
+    }
+
+    public void DelItem(GameObject clickedButton)  // 아이템을 지울때
+    {
+        if (!is_Del_item)
+        {
+            is_Del_item = true;
+            DelLocationSelect.SetActive(true);
+            clickedButton.SetActive(false);
+        }
+        else
+        {
+            is_Del_item = false;
+            DelLocationSelect.SetActive(false);
+            clickedButton.SetActive(true);
         }
     }
 

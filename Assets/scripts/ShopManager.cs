@@ -99,6 +99,22 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void DelItem(GameObject clickedButton)
+    {
+        uiManager.DelItem(clickedButton);
+        foreach (ItemLocation itmLoc in GameManager.instance.itemLocations)
+        {
+            if (itmLoc.currentItem != null)
+            {
+                itmLoc.removeBtn.SetActive(true);
+            }
+            else
+            {
+                itmLoc.removeBtn.SetActive(false);
+            }
+        }
+    }
+
     public void RemoveItem()
     {
         if (currentItem.location.comeon_Gost != null)
@@ -173,6 +189,7 @@ public class ShopManager : MonoBehaviour
 
         itemLocation.timer = 0f;
         itemLocation.itemImage.SetActive(false);
+        itemLocation.removeBtn.SetActive(false);
         itemLocation.currentItem.location = null;
         itemLocation.currentItem.is_Located = false;
         itemLocation.currentItem = null;
