@@ -31,35 +31,32 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
             if(menu_set.activeInHierarchy)
             {
-                menu_set.SetActive(false);
-                menu_base.transform.DOMoveX(4f, 0.5f).OnComplete(Ectv_Active_true_with_Off_Menu);
-                Ectv_button.SetActive(true);
-                DelButton.SetActive(true);
+                OpenMenu();
                 return;
             }
-            if (note_set.activeInHierarchy)
+            if(note_set.activeInHierarchy)
             {
-                if(quit_popup.activeInHierarchy)
-                {
-                    quit_popup.SetActive(false);
-                    return;
-                }
-                note_set.transform.DOMoveX(5f, 1f);
-                note_set.transform.DORotate(new Vector3(0, 0, -2), 1).OnComplete(Ectv_Active_true_with_Off_Menu);
-                Ectv_button.SetActive(true);
-                DelButton.SetActive(true);
+                OffNote();
+                return;
             }
-            else
+            if(DelLocationSelect.activeInHierarchy)
             {
-
-                if(quit_popup.activeInHierarchy)
-                    quit_popup.SetActive(false);
-                else if(!quit_popup.activeInHierarchy)
-                    quit_popup.SetActive(true);
+                DelItem(DelButton);
+                return;
+            }
+            if (!menu_set.activeInHierarchy || !note_set.activeInHierarchy || !DelButton.activeInHierarchy)
+            {
+                if (quit_popup.activeInHierarchy)
+                {
+                    Quit_popup_Off();
+                }
                 else
-                    return;
+                {
+                    Quit_popup();
+                }
             }
         }
     }
@@ -186,6 +183,7 @@ public class UIManager : MonoBehaviour
         shop_base.SetActive(false);
         gostInfo_base.SetActive(false);
         setting_base.SetActive(false);
+        is_Ectv_pressed = true;
     }
 
 
@@ -196,7 +194,7 @@ public class UIManager : MonoBehaviour
 
     public void Quit_popup_Off()
     {
-        quit_popup.SetActive(true);
+        quit_popup.SetActive(false);
     }
 
     public void Exit()
