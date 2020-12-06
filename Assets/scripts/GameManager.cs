@@ -163,6 +163,15 @@ public class GameManager : MonoBehaviour
         wispText.text = string.Format(" : {0}", gameInfo.wisp);
     }
 
+    public void SecretButton()
+    {
+        comepersent = 80;
+        foreach (NoteInfo noteInfo in gameInfo.noteInfos)
+        {
+            noteInfo.gostFavorability = 100;
+        }
+    }
+
     // Json IO
     [ContextMenu("To Json Data")]
     void SaveGameDataToJson()
